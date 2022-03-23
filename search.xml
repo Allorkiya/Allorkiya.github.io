@@ -439,8 +439,8 @@ f_{i,j} = min(f_{i,k} + f_{k + 1,j}) \\</script><h2 id="代码"><a href="#代码
         <category>区间dp</category>
       </categories>
       <tags>
-        <tag>区间dp</tag>
         <tag>CERC</tag>
+        <tag>区间dp</tag>
       </tags>
   </entry>
   <entry>
