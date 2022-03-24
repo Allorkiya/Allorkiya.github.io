@@ -249,6 +249,35 @@ f_i = all - \sum_{j = 1}^{m}f_j \times now</script><p>最后$f_m$为答案。</p
       </tags>
   </entry>
   <entry>
+    <title>概率论习题集——Chap1</title>
+    <url>/2022-03-24-%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B9%A0%E9%A2%98%E9%9B%86%E2%80%94%E2%80%94Chap1.html</url>
+    <content><![CDATA[<h1 id="概率论习题集"><a href="#概率论习题集" class="headerlink" title="概率论习题集"></a><center>概率论习题集</center></h1><center>施利亚耶夫</center>
+
+<span id="more"></span>
+<h2 id="1-德摩根定律证明："><a href="#1-德摩根定律证明：" class="headerlink" title="1.德摩根定律证明："></a>1.德摩根定律证明：</h2><h3 id="定理："><a href="#定理：" class="headerlink" title="定理："></a>定理：</h3><script type="math/tex; mode=display">
+Prove:(A \cup B)^c = A^c \cap B^c \; ; \; (A \cap B)^c = A^c \cup B^c</script><h3 id="证明："><a href="#证明：" class="headerlink" title="证明："></a>证明：</h3><ul>
+<li>因为$\forall x \in (A \cup B)^c,x \notin A \and x \notin B$，所以$x \in A^c \and x \in B^c,x \in A^c \cap B^c$因此$(A \cup B)^c \subseteq A^c \cap B^c$.</li>
+<li>因为$\forall x \in A^c \cap B^c,x \in A^c \and x \in B^c$，所以$x \in (A \cup B)^c$</li>
+</ul>
+<p>另一个同理，核心画韦恩图即可。</p>
+<h2 id="2-不完全阶乘-N-n-N-N-1-dots-N-n-1-A-N-n"><a href="#2-不完全阶乘-N-n-N-N-1-dots-N-n-1-A-N-n" class="headerlink" title="2.不完全阶乘$(N)_n:N(N - 1)\dots(N - n + 1) = A_N^n$"></a>2.不完全阶乘$(N)_n:N(N - 1)\dots(N - n + 1) = A_N^n$</h2><ol>
+<li>从大小为$N$的集合中选出大小为$n$的有序样本（无放回抽样）</li>
+<li>从由$N$个不同字符构成的字母表中取出不同字母所形成的长度为$n$的单词的数目</li>
+<li>定义在两个集合$A,B(|A| = n,|B| = N,N &gt; n)$上的双射个数</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Math</category>
+        <category>Probability</category>
+        <category>概率论习题集——施利亚耶夫</category>
+      </categories>
+      <tags>
+        <tag>Summary</tag>
+        <tag>Probability</tag>
+        <tag>Math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Game on Sum</title>
     <url>/2022-03-19-Game-on-Sum.html</url>
     <content><![CDATA[<h1 id="Game-on-Sum"><a href="#Game-on-Sum" class="headerlink" title="Game on Sum"></a><center>Game on Sum</center></h1><span id="more"></span>
@@ -272,31 +301,6 @@ f[i][j] = \frac{f[i - 1][j] + f[i - 1][j - 1]}{2}</script><p>当两边同时乘$
       <tags>
         <tag>Combinatorial mathematics</tag>
         <tag>Codeforces</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>概率论趣题</title>
-    <url>/2022-03-10-%E6%A6%82%E7%8E%87%E8%AE%BA%E8%B6%A3%E9%A2%98.html</url>
-    <content><![CDATA[<h1 id="概率论趣题"><a href="#概率论趣题" class="headerlink" title="概率论趣题"></a><center>概率论趣题</center></h1><span id="more"></span>
-<h2 id="邦费罗尼不等式——Chap1"><a href="#邦费罗尼不等式——Chap1" class="headerlink" title="邦费罗尼不等式——Chap1"></a>邦费罗尼不等式——Chap1</h2><script type="math/tex; mode=display">
-P(A_1 \cap A_2 \cap \dots \cap A_n) \geq P(A_1) + \dots + P(A_n) - (n - 1)</script><p>证明运用德摩根定律即可。</p>
-<h2 id="容斥恒等式——Chap1"><a href="#容斥恒等式——Chap1" class="headerlink" title="容斥恒等式——Chap1"></a>容斥恒等式——Chap1</h2><script type="math/tex; mode=display">
-P(\cup_{k = 1}^{n}A_k) = \sum_{i \in S_1}P(A_i) - \sum_{(i_1,i_2) \in S_2}P(A_{i_1} \cap A_{i_2}) + \dots + (-1)^{n - 1}P(\cap_{k = 1}^{n}A_k)</script><h2 id="弱者利用策略胜利——Chap1"><a href="#弱者利用策略胜利——Chap1" class="headerlink" title="弱者利用策略胜利——Chap1"></a>弱者利用策略胜利——Chap1</h2><p>A准备进行两局下棋比赛，每局有三种结果：赢、输、平局，如果两局之后的积分相等，那么一直打下去直到一方赢一局。</p>
-<p>A有两种下棋风格：</p>
-<ol>
-<li>进攻性：赢$p_w$，输$1-p_w$</li>
-<li>保守性：平$p_d$，输$1 - p_d$</li>
-</ol>
-<p>在两局之后采用进攻性，前两局任意两种风格均可。</p>
-<p>问：若$p_w &lt; \frac{1}{2}$则A均是游戏弱者。当采用策略：只要分数领先，就采用保守风格，其他情况均进攻；A会有大于50%的获胜机会，如何解释（依赖于$p_w,p_d$的值）？</p>
-]]></content>
-      <categories>
-        <category>Math</category>
-        <category>Probability</category>
-      </categories>
-      <tags>
-        <tag>Probability</tag>
-        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
