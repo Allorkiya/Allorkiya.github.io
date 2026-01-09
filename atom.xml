@@ -6,7 +6,7 @@
   <link href="http://allorkiya.github.io/atom.xml" rel="self"/>
   
   <link href="http://allorkiya.github.io/"/>
-  <updated>2022-12-06T07:36:54.565Z</updated>
+  <updated>2022-03-19T15:52:25.989Z</updated>
   <id>http://allorkiya.github.io/</id>
   
   <author>
@@ -15,59 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Python文件处理</title>
-    <link href="http://allorkiya.github.io/2022-12-06-Python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86.html"/>
-    <id>http://allorkiya.github.io/2022-12-06-Python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86.html</id>
-    <published>2022-12-06T07:36:54.000Z</published>
-    <updated>2022-12-06T07:36:54.565Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>线性回归</title>
-    <link href="http://allorkiya.github.io/2022-03-28-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html"/>
-    <id>http://allorkiya.github.io/2022-03-28-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.html</id>
-    <published>2022-03-28T14:49:45.000Z</published>
-    <updated>2022-03-28T14:49:45.202Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>概率论习题集——Chap1</title>
-    <link href="http://allorkiya.github.io/2022-03-24-%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B9%A0%E9%A2%98%E9%9B%86%E2%80%94%E2%80%94Chap1.html"/>
-    <id>http://allorkiya.github.io/2022-03-24-%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B9%A0%E9%A2%98%E9%9B%86%E2%80%94%E2%80%94Chap1.html</id>
-    <published>2022-03-24T14:58:59.000Z</published>
-    <updated>2022-03-31T14:50:37.450Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;概率论习题集&quot;&gt;&lt;a href=&quot;#概率论习题集&quot; class=&quot;headerlink&quot; title=&quot;概率论习题集&quot;&gt;&lt;/a&gt;&lt;center&gt;概率论习题集&lt;/center&gt;&lt;/h1&gt;&lt;center&gt;施利亚耶夫&lt;/center&gt;</summary>
-    
-    
-    
-    <category term="Math" scheme="http://allorkiya.github.io/categories/Math/"/>
-    
-    <category term="Probability" scheme="http://allorkiya.github.io/categories/Math/Probability/"/>
-    
-    <category term="概率论习题集——施利亚耶夫" scheme="http://allorkiya.github.io/categories/Math/Probability/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B9%A0%E9%A2%98%E9%9B%86%E2%80%94%E2%80%94%E6%96%BD%E5%88%A9%E4%BA%9A%E8%80%B6%E5%A4%AB/"/>
-    
-    
-    <category term="Summary" scheme="http://allorkiya.github.io/tags/Summary/"/>
-    
-    <category term="Probability" scheme="http://allorkiya.github.io/tags/Probability/"/>
-    
-    <category term="Math" scheme="http://allorkiya.github.io/tags/Math/"/>
-    
-  </entry>
   
   <entry>
     <title>Game on Sum</title>
@@ -137,27 +84,6 @@
     <category term="计数dp" scheme="http://allorkiya.github.io/tags/%E8%AE%A1%E6%95%B0dp/"/>
     
     <category term="容斥原理" scheme="http://allorkiya.github.io/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACM模板</title>
-    <link href="http://allorkiya.github.io/2022-03-04-ACM%E6%A8%A1%E6%9D%BF.html"/>
-    <id>http://allorkiya.github.io/2022-03-04-ACM%E6%A8%A1%E6%9D%BF.html</id>
-    <published>2022-03-04T09:41:21.000Z</published>
-    <updated>2022-03-04T09:47:37.053Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Allorkiya’s-ACM&quot;&gt;&lt;a href=&quot;#Allorkiya’s-ACM&quot; class=&quot;headerlink&quot; title=&quot; Allorkiya’s ACM &quot;&gt;&lt;/a&gt;&lt;center&gt; Allorkiya’s ACM &lt;/center&gt;&lt;/h1&gt;</summary>
-    
-    
-    
-    <category term="ACM" scheme="http://allorkiya.github.io/categories/ACM/"/>
-    
-    <category term="模板" scheme="http://allorkiya.github.io/categories/ACM/%E6%A8%A1%E6%9D%BF/"/>
-    
-    
-    <category term="模板" scheme="http://allorkiya.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
@@ -253,30 +179,9 @@
     <category term="区间dp" scheme="http://allorkiya.github.io/categories/ACM/dp/%E5%8C%BA%E9%97%B4dp/"/>
     
     
-    <category term="区间dp" scheme="http://allorkiya.github.io/tags/%E5%8C%BA%E9%97%B4dp/"/>
-    
     <category term="CERC" scheme="http://allorkiya.github.io/tags/CERC/"/>
     
-  </entry>
-  
-  <entry>
-    <title>2022 Namomo Camp Week1</title>
-    <link href="http://allorkiya.github.io/2022-03-01-2022-Namomo-Camp-Week1.html"/>
-    <id>http://allorkiya.github.io/2022-03-01-2022-Namomo-Camp-Week1.html</id>
-    <published>2022-03-01T14:06:07.000Z</published>
-    <updated>2022-03-04T10:16:59.777Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;2022-Namomo-Camp-Week1&quot;&gt;&lt;a href=&quot;#2022-Namomo-Camp-Week1&quot; class=&quot;headerlink&quot; title=&quot; 2022 Namomo Camp Week1&quot;&gt;&lt;/a&gt;&lt;center&gt; 2022 Namomo Camp Week1&lt;/center&gt;&lt;/h1&gt;</summary>
-    
-    
-    
-    <category term="ACM" scheme="http://allorkiya.github.io/categories/ACM/"/>
-    
-    <category term="2022 Namomo Camp" scheme="http://allorkiya.github.io/categories/ACM/2022-Namomo-Camp/"/>
-    
-    
-    <category term="Summary" scheme="http://allorkiya.github.io/tags/Summary/"/>
+    <category term="区间dp" scheme="http://allorkiya.github.io/tags/%E5%8C%BA%E9%97%B4dp/"/>
     
   </entry>
   
@@ -373,50 +278,6 @@
   </entry>
   
   <entry>
-    <title>学习计划</title>
-    <link href="http://allorkiya.github.io/2022-02-25-%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.html"/>
-    <id>http://allorkiya.github.io/2022-02-25-%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.html</id>
-    <published>2022-02-24T16:07:23.000Z</published>
-    <updated>2022-03-10T15:31:22.073Z</updated>
-    
-    
-    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
-    
-    
-    
-    
-    <category term="Summary" scheme="http://allorkiya.github.io/tags/Summary/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>XGBoost</title>
-    <link href="http://allorkiya.github.io/2022-02-24-XGBoost.html"/>
-    <id>http://allorkiya.github.io/2022-02-24-XGBoost.html</id>
-    <published>2022-02-24T14:12:20.000Z</published>
-    <updated>2022-03-03T03:03:42.421Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;XGBoost&quot;&gt;&lt;a href=&quot;#XGBoost&quot; class=&quot;headerlink&quot; title=&quot;XGBoost&quot;&gt;&lt;/a&gt;&lt;center&gt;XGBoost&lt;/center&gt;&lt;/h1&gt;&lt;p&gt;集成算法XGBoost的学习笔记。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Machine Learning" scheme="http://allorkiya.github.io/categories/Machine-Learning/"/>
-    
-    <category term="Notes" scheme="http://allorkiya.github.io/categories/Machine-Learning/Notes/"/>
-    
-    
-    <category term="Summary" scheme="http://allorkiya.github.io/tags/Summary/"/>
-    
-    <category term="Machine Learning" scheme="http://allorkiya.github.io/tags/Machine-Learning/"/>
-    
-    <category term="XGBoost" scheme="http://allorkiya.github.io/tags/XGBoost/"/>
-    
-    <category term="Python" scheme="http://allorkiya.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Machine Learning Summary</title>
     <link href="http://allorkiya.github.io/2022-02-24-Machine-Learning-Summary.html"/>
     <id>http://allorkiya.github.io/2022-02-24-Machine-Learning-Summary.html</id>
@@ -467,6 +328,31 @@
     <category term="RandomForest" scheme="http://allorkiya.github.io/tags/RandomForest/"/>
     
     <category term="Python" scheme="http://allorkiya.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Introduction to Probability,2E</title>
+    <link href="http://allorkiya.github.io/2022-02-23-Introduction-to-Probability-2E.html"/>
+    <id>http://allorkiya.github.io/2022-02-23-Introduction-to-Probability-2E.html</id>
+    <published>2022-02-23T10:05:12.000Z</published>
+    <updated>2022-02-23T10:24:01.596Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;《Introduction-to-Probability》2E&quot;&gt;&lt;a href=&quot;#《Introduction-to-Probability》2E&quot; class=&quot;headerlink&quot; title=&quot; 《Introduction to Probability》2E&quot;&gt;&lt;/a&gt;&lt;center&gt; 《Introduction to Probability》2E&lt;/center&gt;&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="Math" scheme="http://allorkiya.github.io/categories/Math/"/>
+    
+    <category term="Probability" scheme="http://allorkiya.github.io/categories/Math/Probability/"/>
+    
+    
+    <category term="Probability" scheme="http://allorkiya.github.io/tags/Probability/"/>
+    
+    <category term="Math" scheme="http://allorkiya.github.io/tags/Math/"/>
+    
+    <category term="Summary" scheme="http://allorkiya.github.io/tags/Summary/"/>
     
   </entry>
   
