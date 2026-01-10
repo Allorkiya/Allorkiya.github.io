@@ -45,32 +45,6 @@ max\{ f(v) + h(y) + \sum_{p \neq v 且 p \neq y} g(p)\} = max(a_v) + h(y) + \sum
       </tags>
   </entry>
   <entry>
-    <title>Game on Sum</title>
-    <url>/2022-03-19-Game-on-Sum.html</url>
-    <content><![CDATA[<h1 id="Game-on-Sum"><a href="#Game-on-Sum" class="headerlink" title="Game on Sum"></a><center>Game on Sum</center></h1><span id="more"></span>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个游戏，A最大化B最小化，B可以选择添加或减少，但是必须加$m$次，问游戏最终得分。</p>
-<h2 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h2><p>$1 \leq T \leq 10^5,1 \leq n \leq 10^6,\sum n \leq 10^6$</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>$f[n][m]$表示当前还有$n$轮，$m$个加的情况的答案。</p>
-<p>那么</p>
-<script type="math/tex; mode=display">
-f[i][j] = \frac{f[i - 1][j] + f[i - 1][j - 1]}{2}</script><p>当两边同时乘$2^n$的时候转化成：</p>
-<script type="math/tex; mode=display">
-2^nf[n][m] = 2^{n - 1}f[n - 1][m] + 2^{n - 1}f[n - 1][m - 1]</script><p>令$g[n][m] = 2^nf[n][m]$</p>
-<p>那么：</p>
-<script type="math/tex; mode=display">
-    g[n][m] = g[n - 1][m] + g[n - 1][m - 1]</script><p>那么只要找到一个$(i,i)$点再乘上从$(i + 1,i)$到$(n,m)$的方案数：$C_{n -i - 1}^{m - i}$</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line">ll fc[N];</span><br><span class="line">ll inv[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">pow_mod</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(b) &#123;</span><br><span class="line">		<span class="keyword">if</span>(b &amp; <span class="number">1</span>) res = <span class="number">1ll</span> * res * a  % mod;</span><br><span class="line">		a = <span class="number">1ll</span> * a * a % mod;</span><br><span class="line">		b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	fc[<span class="number">0</span>] = fc[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	inv[<span class="number">0</span>] = inv[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt; N;i ++) &#123;</span><br><span class="line">		fc[i] = fc[i - <span class="number">1</span>] * i % mod;</span><br><span class="line">		inv[i] = (mod - mod / i) % mod * inv[mod % i] % mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt; N;i ++) &#123;</span><br><span class="line">		inv[i] = inv[i - <span class="number">1</span>] * inv[i] % mod;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">C</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> m)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n &lt; m) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> fc[n] * inv[m] % mod * inv[n - m] % mod;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">init</span> ();</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="type">int</span> n,m,k;</span><br><span class="line">		cin &gt;&gt; n &gt;&gt; m &gt;&gt; k;</span><br><span class="line">		<span class="keyword">if</span>(n == m) &#123;</span><br><span class="line">			cout &lt;&lt;<span class="number">1ll</span> *  m * k % mod &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			ll ans = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= m; i ++) &#123;</span><br><span class="line">				ans = (ans + <span class="number">1ll</span> * i * <span class="built_in">C</span>(n - i - <span class="number">1</span>,m - i) % mod * <span class="built_in">pow_mod</span>(<span class="built_in">pow_mod</span>(<span class="number">2</span>,n - i),mod - <span class="number">2</span>) % mod) % mod;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			cout &lt;&lt; ((ans + mod) * k) % mod &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>ACM</category>
-        <category>Combinatorial mathematics</category>
-      </categories>
-      <tags>
-        <tag>Combinatorial mathematics</tag>
-        <tag>Codeforces</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2022 Namomo-Camp 每日一题</title>
     <url>/2022-02-25-2022-Namomo-Camp-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html</url>
     <content><![CDATA[<h1 id="Namomo-Camp"><a href="#Namomo-Camp" class="headerlink" title="Namomo Camp"></a><center>Namomo Camp</center></h1><span id="more"></span>
@@ -272,27 +246,6 @@ f_i = all - \sum_{j = 1}^{m}f_j \times now</script><p>最后$f_m$为答案。</p
       </tags>
   </entry>
   <entry>
-    <title>Introduction to Probability,2E</title>
-    <url>/2022-02-23-Introduction-to-Probability-2E.html</url>
-    <content><![CDATA[<h1 id="《Introduction-to-Probability》2E"><a href="#《Introduction-to-Probability》2E" class="headerlink" title=" 《Introduction to Probability》2E"></a><center> 《Introduction to Probability》2E</center></h1><span id="more"></span>
-<h2 id="Chap1"><a href="#Chap1" class="headerlink" title="Chap1"></a>Chap1</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15750155.html">Chap1</a></p>
-<h2 id="Chap2"><a href="#Chap2" class="headerlink" title="Chap2"></a>Chap2</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15769121.html">Chap2</a></p>
-<h2 id="Chap3"><a href="#Chap3" class="headerlink" title="Chap3"></a>Chap3</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15773043.html">Chap3</a></p>
-<h2 id="Chap4"><a href="#Chap4" class="headerlink" title="Chap4"></a>Chap4</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15776771.html">Chap4</a></p>
-<h2 id="Chap5"><a href="#Chap5" class="headerlink" title="Chap5"></a>Chap5</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15781866.html">Chap5</a></p>
-<h2 id="Chap6"><a href="#Chap6" class="headerlink" title="Chap6"></a>Chap6</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15835178.html">Chap6</a></p>
-]]></content>
-      <categories>
-        <category>Math</category>
-        <category>Probability</category>
-      </categories>
-      <tags>
-        <tag>Probability</tag>
-        <tag>Math</tag>
-        <tag>Summary</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Infinite Set</title>
     <url>/2022-03-10-Infinite-Set.html</url>
     <content><![CDATA[<h1 id="Infinite-Set"><a href="#Infinite-Set" class="headerlink" title="Infinite Set"></a><center>Infinite Set</center></h1><span id="more"></span>
@@ -317,6 +270,53 @@ f_{i + 2} += f_i</script><p>但是，你需要将现有的$A$中去重，复杂�
       </categories>
       <tags>
         <tag>二进制dp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Game on Sum</title>
+    <url>/2022-03-19-Game-on-Sum.html</url>
+    <content><![CDATA[<h1 id="Game-on-Sum"><a href="#Game-on-Sum" class="headerlink" title="Game on Sum"></a><center>Game on Sum</center></h1><span id="more"></span>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个游戏，A最大化B最小化，B可以选择添加或减少，但是必须加$m$次，问游戏最终得分。</p>
+<h2 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h2><p>$1 \leq T \leq 10^5,1 \leq n \leq 10^6,\sum n \leq 10^6$</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>$f[n][m]$表示当前还有$n$轮，$m$个加的情况的答案。</p>
+<p>那么</p>
+<script type="math/tex; mode=display">
+f[i][j] = \frac{f[i - 1][j] + f[i - 1][j - 1]}{2}</script><p>当两边同时乘$2^n$的时候转化成：</p>
+<script type="math/tex; mode=display">
+2^nf[n][m] = 2^{n - 1}f[n - 1][m] + 2^{n - 1}f[n - 1][m - 1]</script><p>令$g[n][m] = 2^nf[n][m]$</p>
+<p>那么：</p>
+<script type="math/tex; mode=display">
+    g[n][m] = g[n - 1][m] + g[n - 1][m - 1]</script><p>那么只要找到一个$(i,i)$点再乘上从$(i + 1,i)$到$(n,m)$的方案数：$C_{n -i - 1}^{m - i}$</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line">ll fc[N];</span><br><span class="line">ll inv[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">pow_mod</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(b) &#123;</span><br><span class="line">		<span class="keyword">if</span>(b &amp; <span class="number">1</span>) res = <span class="number">1ll</span> * res * a  % mod;</span><br><span class="line">		a = <span class="number">1ll</span> * a * a % mod;</span><br><span class="line">		b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	fc[<span class="number">0</span>] = fc[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	inv[<span class="number">0</span>] = inv[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt; N;i ++) &#123;</span><br><span class="line">		fc[i] = fc[i - <span class="number">1</span>] * i % mod;</span><br><span class="line">		inv[i] = (mod - mod / i) % mod * inv[mod % i] % mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt; N;i ++) &#123;</span><br><span class="line">		inv[i] = inv[i - <span class="number">1</span>] * inv[i] % mod;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">C</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> m)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n &lt; m) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> fc[n] * inv[m] % mod * inv[n - m] % mod;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">init</span> ();</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="type">int</span> n,m,k;</span><br><span class="line">		cin &gt;&gt; n &gt;&gt; m &gt;&gt; k;</span><br><span class="line">		<span class="keyword">if</span>(n == m) &#123;</span><br><span class="line">			cout &lt;&lt;<span class="number">1ll</span> *  m * k % mod &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			ll ans = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= m; i ++) &#123;</span><br><span class="line">				ans = (ans + <span class="number">1ll</span> * i * <span class="built_in">C</span>(n - i - <span class="number">1</span>,m - i) % mod * <span class="built_in">pow_mod</span>(<span class="built_in">pow_mod</span>(<span class="number">2</span>,n - i),mod - <span class="number">2</span>) % mod) % mod;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			cout &lt;&lt; ((ans + mod) * k) % mod &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>ACM</category>
+        <category>Combinatorial mathematics</category>
+      </categories>
+      <tags>
+        <tag>Combinatorial mathematics</tag>
+        <tag>Codeforces</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Introduction to Probability,2E</title>
+    <url>/2022-02-23-Introduction-to-Probability-2E.html</url>
+    <content><![CDATA[<h1 id="《Introduction-to-Probability》2E"><a href="#《Introduction-to-Probability》2E" class="headerlink" title=" 《Introduction to Probability》2E"></a><center> 《Introduction to Probability》2E</center></h1><span id="more"></span>
+<h2 id="Chap1"><a href="#Chap1" class="headerlink" title="Chap1"></a>Chap1</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15750155.html">Chap1</a></p>
+<h2 id="Chap2"><a href="#Chap2" class="headerlink" title="Chap2"></a>Chap2</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15769121.html">Chap2</a></p>
+<h2 id="Chap3"><a href="#Chap3" class="headerlink" title="Chap3"></a>Chap3</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15773043.html">Chap3</a></p>
+<h2 id="Chap4"><a href="#Chap4" class="headerlink" title="Chap4"></a>Chap4</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15776771.html">Chap4</a></p>
+<h2 id="Chap5"><a href="#Chap5" class="headerlink" title="Chap5"></a>Chap5</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15781866.html">Chap5</a></p>
+<h2 id="Chap6"><a href="#Chap6" class="headerlink" title="Chap6"></a>Chap6</h2><p><a href="https://www.cnblogs.com/Allorkiya/articles/15835178.html">Chap6</a></p>
+]]></content>
+      <categories>
+        <category>Math</category>
+        <category>Probability</category>
+      </categories>
+      <tags>
+        <tag>Probability</tag>
+        <tag>Math</tag>
+        <tag>Summary</tag>
       </tags>
   </entry>
   <entry>
@@ -511,25 +511,6 @@ f_{i,j} = min(f_{i,k} + f_{k + 1,j}) \\</script><h2 id="代码"><a href="#代码
       </tags>
   </entry>
   <entry>
-    <title>青蛙的约会</title>
-    <url>/2022-03-01-%E9%9D%92%E8%9B%99%E7%9A%84%E7%BA%A6%E4%BC%9A.html</url>
-    <content><![CDATA[<h1 id="青蛙的约会"><a href="#青蛙的约会" class="headerlink" title=" 青蛙的约会"></a><center> 青蛙的约会</center></h1><span id="more"></span>
-<p>链接：<a href="https://ac.nowcoder.com/acm/contest/21094/A">传送门</a></p>
-<h2 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h2><p>给定两只青蛙的地点和速度，求相遇时间，追及问题。</p>
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><script type="math/tex; mode=display">
-x + mk = y + nk (mod \; L) \\</script><p>求解最小$k$</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> x,y,m,n,L;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">exgcd</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> &amp;x,<span class="type">int</span> &amp;y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b == <span class="number">0</span>) &#123;</span><br><span class="line">        x = <span class="number">1</span>,y = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="type">int</span> r = <span class="built_in">exgcd</span>(b,a % b,x,y);</span><br><span class="line">        <span class="type">int</span> t = x;</span><br><span class="line">        x = y;</span><br><span class="line">        y = t - (a / b) * y;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; x &gt;&gt; y &gt;&gt; m &gt;&gt; n &gt;&gt; L;</span><br><span class="line">    <span class="type">int</span> a = <span class="built_in">abs</span>(m - n);</span><br><span class="line">    <span class="type">int</span> b = L;</span><br><span class="line">    <span class="type">int</span> c = m &gt; n ? y - x : x - y;</span><br><span class="line">    <span class="type">int</span> p,q;</span><br><span class="line">    <span class="type">int</span> d = <span class="built_in">exgcd</span>(a,b,p,q);</span><br><span class="line">    <span class="keyword">if</span>(c % d) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;Impossible&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        p = p * c / d;</span><br><span class="line">        <span class="type">int</span> t = b / d;</span><br><span class="line">        p = (p % t + t) % t;</span><br><span class="line">        cout &lt;&lt; p &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>ACM</category>
-        <category>Math Theory</category>
-        <category>Exgcd</category>
-      </categories>
-      <tags>
-        <tag>Exgcd</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Werewolves</title>
     <url>/2022-03-04-Werewolves.html</url>
     <content><![CDATA[<h1 id="Werewolves"><a href="#Werewolves" class="headerlink" title=" Werewolves "></a><center> Werewolves </center></h1><span id="more"></span>
@@ -548,6 +529,25 @@ x + mk = y + nk (mod \; L) \\</script><p>求解最小$k$</p>
       <tags>
         <tag>树形dp</tag>
         <tag>SEERC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>青蛙的约会</title>
+    <url>/2022-03-01-%E9%9D%92%E8%9B%99%E7%9A%84%E7%BA%A6%E4%BC%9A.html</url>
+    <content><![CDATA[<h1 id="青蛙的约会"><a href="#青蛙的约会" class="headerlink" title=" 青蛙的约会"></a><center> 青蛙的约会</center></h1><span id="more"></span>
+<p>链接：<a href="https://ac.nowcoder.com/acm/contest/21094/A">传送门</a></p>
+<h2 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h2><p>给定两只青蛙的地点和速度，求相遇时间，追及问题。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><script type="math/tex; mode=display">
+x + mk = y + nk (mod \; L) \\</script><p>求解最小$k$</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> x,y,m,n,L;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">exgcd</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> &amp;x,<span class="type">int</span> &amp;y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b == <span class="number">0</span>) &#123;</span><br><span class="line">        x = <span class="number">1</span>,y = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="type">int</span> r = <span class="built_in">exgcd</span>(b,a % b,x,y);</span><br><span class="line">        <span class="type">int</span> t = x;</span><br><span class="line">        x = y;</span><br><span class="line">        y = t - (a / b) * y;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; x &gt;&gt; y &gt;&gt; m &gt;&gt; n &gt;&gt; L;</span><br><span class="line">    <span class="type">int</span> a = <span class="built_in">abs</span>(m - n);</span><br><span class="line">    <span class="type">int</span> b = L;</span><br><span class="line">    <span class="type">int</span> c = m &gt; n ? y - x : x - y;</span><br><span class="line">    <span class="type">int</span> p,q;</span><br><span class="line">    <span class="type">int</span> d = <span class="built_in">exgcd</span>(a,b,p,q);</span><br><span class="line">    <span class="keyword">if</span>(c % d) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;Impossible&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        p = p * c / d;</span><br><span class="line">        <span class="type">int</span> t = b / d;</span><br><span class="line">        p = (p % t + t) % t;</span><br><span class="line">        cout &lt;&lt; p &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>ACM</category>
+        <category>Math Theory</category>
+        <category>Exgcd</category>
+      </categories>
+      <tags>
+        <tag>Exgcd</tag>
       </tags>
   </entry>
 </search>
