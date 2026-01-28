@@ -6,7 +6,7 @@
   <link href="http://allorkiya.github.io/atom.xml" rel="self"/>
   
   <link href="http://allorkiya.github.io/"/>
-  <updated>2026-01-20T07:35:58.830Z</updated>
+  <updated>2026-01-21T02:47:03.584Z</updated>
   <id>http://allorkiya.github.io/</id>
   
   <author>
@@ -17,9 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>AcWing1010.导弹拦截</title>
+    <link href="http://allorkiya.github.io/2026-01-21-AcWing1010-%E5%AF%BC%E5%BC%B9%E6%8B%A6%E6%88%AA.html"/>
+    <id>http://allorkiya.github.io/2026-01-21-AcWing1010-%E5%AF%BC%E5%BC%B9%E6%8B%A6%E6%88%AA.html</id>
+    <published>2026-01-21T02:41:29.000Z</published>
+    <updated>2026-01-21T02:47:03.584Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;h3 id=&quot;section&quot;&gt;&lt;/h3&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span</summary>
+      
+    
+    
+    
+    <category term="算法题" scheme="http://allorkiya.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+    
+    <category term="dp" scheme="http://allorkiya.github.io/tags/dp/"/>
+    
+    <category term="Dilworth定理" scheme="http://allorkiya.github.io/tags/Dilworth%E5%AE%9A%E7%90%86/"/>
+    
+    <category term="贪心" scheme="http://allorkiya.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+  </entry>
+  
+  <entry>
     <title>1074</title>
-    <link href="http://allorkiya.github.io/2026-01-20-Codeforces%20Round%201074(div4).html"/>
-    <id>http://allorkiya.github.io/2026-01-20-Codeforces%20Round%201074(div4).html</id>
+    <link href="http://allorkiya.github.io/2026-01-20-Codeforces_Round_1074(div4).html"/>
+    <id>http://allorkiya.github.io/2026-01-20-Codeforces_Round_1074(div4).html</id>
     <published>2026-01-20T07:35:58.000Z</published>
     <updated>2026-01-20T07:35:58.830Z</updated>
     
@@ -88,7 +116,7 @@
     <link href="http://allorkiya.github.io/2026-01-11-%E6%88%91%E7%9A%84%E8%BF%91%E6%9C%9F%E8%AE%A1%E5%88%92.html"/>
     <id>http://allorkiya.github.io/2026-01-11-%E6%88%91%E7%9A%84%E8%BF%91%E6%9C%9F%E8%AE%A1%E5%88%92.html</id>
     <published>2026-01-11T14:33:59.000Z</published>
-    <updated>2026-01-20T14:10:18.813Z</updated>
+    <updated>2026-01-26T03:54:06.474Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
@@ -102,8 +130,8 @@
   
   <entry>
     <title>AtCoder Beginner Contest 440</title>
-    <link href="http://allorkiya.github.io/2026-01-10-AtCoder%20Beginner%20Contest%20440.html"/>
-    <id>http://allorkiya.github.io/2026-01-10-AtCoder%20Beginner%20Contest%20440.html</id>
+    <link href="http://allorkiya.github.io/2026-01-10-AtCoder_Beginner_Contest%20440.html"/>
+    <id>http://allorkiya.github.io/2026-01-10-AtCoder_Beginner_Contest%20440.html</id>
     <published>2026-01-10T14:29:59.000Z</published>
     <updated>2026-01-11T15:30:12.670Z</updated>
     
