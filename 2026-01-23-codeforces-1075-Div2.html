@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"allorkiya.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="题面写的有点构思…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="codeforces_1075_Div2">
+<meta property="og:url" content="http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html">
+<meta property="og:site_name" content="Workshop | 在路上">
+<meta property="og:description" content="题面写的有点构思…">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-23T14:01:01.000Z">
+<meta property="article:modified_time" content="2026-01-28T15:21:06.535Z">
+<meta property="article:author" content="Allorkiya">
+<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="构造">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html","path":"2026-01-23-codeforces-1075-Div2.html","title":"codeforces_1075_Div2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>codeforces_1075_Div2 | Workshop | 在路上</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Workshop | 在路上" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Workshop | 在路上</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Still Fighting.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">8</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">7</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#a.table-with-numbers"><span class="nav-number">1.</span> <span class="nav-text">A.Table with Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4"><span class="nav-number">1.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">1.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b.the-curse-of-the-frog"><span class="nav-number">2.</span> <span class="nav-text">B.The Curse of the Frog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-1"><span class="nav-number">2.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-1"><span class="nav-number">2.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-number">2.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c1.xor-convenience-easy-version"><span class="nav-number">3.</span> <span class="nav-text">C1.XOR Convenience (Easy
+Version)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">3.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-2"><span class="nav-number">3.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-2"><span class="nav-number">3.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="nav-number">3.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c2.xor-convenience-hard-version"><span class="nav-number">4.</span> <span class="nav-text">C2.XOR-convenience (Hard
+Version)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-3"><span class="nav-number">4.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-3"><span class="nav-number">4.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-3"><span class="nav-number">4.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="nav-number">4.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d1.little-string-easy-version-d2.little-string-hard-version"><span class="nav-number">5.</span> <span class="nav-text">D1.Little
+String (Easy Version) &#x2F; D2.Little String (Hard Version)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-4"><span class="nav-number">5.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-4"><span class="nav-number">5.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-4"><span class="nav-number">5.3.</span> <span class="nav-text">题解</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Allorkiya"
+      src="/images/tou.jpg">
+  <p class="site-author-name" itemprop="name">Allorkiya</p>
+  <div class="site-description" itemprop="description">平静</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/tou.jpg">
+      <meta itemprop="name" content="Allorkiya">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Workshop | 在路上">
+      <meta itemprop="description" content="平静">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="codeforces_1075_Div2 | Workshop | 在路上">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          codeforces_1075_Div2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-01-23 22:01:01" itemprop="dateCreated datePublished" datetime="2026-01-23T22:01:01+08:00">2026-01-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-01-28 23:21:06" itemprop="dateModified" datetime="2026-01-28T23:21:06+08:00">2026-01-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%AF%94%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">比赛</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%AF%94%E8%B5%9B/%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">算法题</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%AF%94%E8%B5%9B/%E7%AE%97%E6%B3%95%E9%A2%98/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>题面写的有点构思…</p>
+<span id="more"></span>
+<h2 id="a.table-with-numbers">A.Table with Numbers</h2>
+<h3 id="题目描述">题目描述</h3>
+<p>给定一个<span class="math inline">\(h \times
+l\)</span>的表格，初始全为0，给定数组<span class="math inline">\(a_1,
+\dots, a_n\)</span>，你可以选出<span class="math inline">\(2k \leq
+n\)</span>个数，把它们分成<span class="math inline">\(k\)</span>对<span class="math inline">\((x,y)\)</span>。对每一对<span class="math inline">\((x,y)\)</span>，如果表格中存在第x行第y列（即<span class="math inline">\(1 \leq x \leq h \; \and \; 1 \leq y \leq
+l\)</span>），则该格子加一，否则这对不产生作用，问表格中元素的最大值。</p>
+<h3 id="数据范围">数据范围</h3>
+<p>输入<span class="math inline">\(T(1 \leq T \leq
+500)\)</span>组数据，对于每组数据：</p>
+<ul>
+<li>第一行<span class="math inline">\(n, h, l(2 \leq n \leq 100, 1 \leq
+h,l \leq 1000)\)</span></li>
+<li>第二行<span class="math inline">\(a_1 \dots a_n(1 \leq a_i \leq
+1000)\)</span></li>
+</ul>
+<h3 id="题解">题解</h3>
+<p>把数组元素是否能当行/列分类：</p>
+<ul>
+<li>两个都可以：<span class="math inline">\(\leq min(h, l)\)</span></li>
+<li>只能当行：<span class="math inline">\(\leq h\)</span>但<span class="math inline">\(&gt; l\)</span> （只在<span class="math inline">\(l &lt; h\)</span>的时候出现）</li>
+<li>只能当列：<span class="math inline">\(\leq l\)</span>但<span class="math inline">\(&gt;h\)</span> （只在<span class="math inline">\(h
+&lt; l\)</span>的时候出现）</li>
+</ul>
+<p>如果想做出<span class="math inline">\(k\)</span>个有效对：</p>
+<ul>
+<li>需要<span class="math inline">\(k\)</span>个行元素：两个都可以+只能当行</li>
+<li>需要<span class="math inline">\(k\)</span>个列元素：两个都可以+只能当列</li>
+<li>两个都可以的元素要在当行/列分配，不能重复用</li>
+</ul>
+<p>只要检查<span class="math inline">\(k\)</span>是否可行：</p>
+<ul>
+<li>行还缺：<span class="math inline">\(max(0, k-onlyRow)\)</span></li>
+<li>列还缺：<span class="math inline">\(max(0, k -
+onlyCol)\)</span></li>
+<li>这两部分都要从两个都可以的元素拿，要求：<span class="math inline">\(max(0,k-onlyRow) + max(0,k-onlyCol) \leq
+both\)</span></li>
+</ul>
+<p>复杂度每组<span class="math inline">\(O(n)\)</span></p>
+<h3 id="代码">代码</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span> <span class="params">(<span class="type">int</span> i, <span class="type">int</span> c1, <span class="type">int</span> c2, <span class="type">int</span> two)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n1 = <span class="built_in">max</span>(<span class="number">0</span>, i - c1);</span><br><span class="line">	<span class="type">int</span> n2 = <span class="built_in">max</span>(<span class="number">0</span>, i - c2);</span><br><span class="line">	<span class="keyword">return</span> n1 + n2 &lt;= two;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n, h, l;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; h &gt;&gt; l;</span><br><span class="line">	<span class="type">int</span> mn = <span class="built_in">min</span>(h, l);</span><br><span class="line">	<span class="type">int</span> cnth = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> cntl = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> two = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) &#123;</span><br><span class="line">		<span class="type">int</span> x;</span><br><span class="line">		cin &gt;&gt; x;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= h) cnth ++;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= l) cntl ++;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= mn) two ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> c1 = cnth - two;</span><br><span class="line">	<span class="type">int</span> c2 = cntl - two;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = n / <span class="number">2</span>;i &gt;= <span class="number">0</span>; i --) &#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">check</span>(i, c1, c2, two)) &#123;</span><br><span class="line">			cout &lt;&lt; i &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="b.the-curse-of-the-frog">B.The Curse of the Frog</h2>
+<h3 id="题目描述-1">题目描述</h3>
+<p>起点在0，共有<span class="math inline">\(n\)</span>种跳法：</p>
+<ul>
+<li>用第<span class="math inline">\(i\)</span>种跳法依次：如果当前在<span class="math inline">\(k\)</span>，则可以落在任意点<span class="math inline">\([k,k+a_i]\)</span></li>
+<li>但第<span class="math inline">\(i\)</span>种跳法每到第<span class="math inline">\(b_i,2b_i,3b_i,\dots\)</span>，使用前会先回退<span class="math inline">\(c_i\)</span>，即从<span class="math inline">\(k\)</span>先变成<span class="math inline">\(k-c_i\)</span>，再落在<span class="math inline">\([k-c_i,k-c_i+a_i]\)</span></li>
+</ul>
+<p>目标是到达点<span class="math inline">\(x\)</span>，输出最少回退次数，如果到不了输出-1.</p>
+<h3 id="数据范围-1">数据范围</h3>
+<p>输入<span class="math inline">\(T(1 \leq T \leq
+10000)\)</span>组数据，对于每组数据：</p>
+<ul>
+<li>第一行<span class="math inline">\(n, x(1 \leq n \leq 10^5, 1 \leq x
+\leq 10^{18})\)</span></li>
+<li>之后的n行，每行<span class="math inline">\(a_i,b_i,c_i(1 \leq
+a_i,b_i,c_i \leq 10^6)\)</span></li>
+<li><span class="math inline">\(\sum n \leq 10^5\)</span></li>
+</ul>
+<h3 id="题解-1">题解</h3>
+<p>我们关心，给定回退次数<span class="math inline">\(R\)</span>，最远能到多远？因为每次落点是一个连续区间内任意一个点，只要最远能到<span class="math inline">\(\geq
+x\)</span>，就能通过最后几步少跳一点精确落在<span class="math inline">\(x\)</span></p>
+<ol type="1">
+<li>0次回退能白嫖到多远？</li>
+</ol>
+<p>对第<span class="math inline">\(i\)</span>种跳法，如果不想触发回退，就是最多用到第<span class="math inline">\(b_i - 1\)</span>次，所以第<span class="math inline">\(i\)</span>种能免费提供的最大前进距离是<span class="math inline">\(a_i \times (b_i - 1)\)</span></p>
+<p>因此，总最远距离<span class="math inline">\(Dis = \sum_{i=1}^n a_i
+\times (b_i - 1)\)</span>，若<span class="math inline">\(x \leq
+Dis\)</span>，则答案就是0.</p>
+<ol start="2" type="1">
+<li>一次回退的价值？</li>
+</ol>
+<p>如果决定让第<span class="math inline">\(i\)</span>种跳法触发一次回退，那么最优的方式是：</p>
+<ul>
+<li>先用它若干次到临界，每触发1次回退，总能安排出一整段“包含恰好1次回退”的使用块</li>
+<li>这段块里共有<span class="math inline">\(b_i\)</span>次使用，其中<span class="math inline">\(b_i - 1\)</span>次正常，每次最多<span class="math inline">\(+ a_i\)</span></li>
+<li>那一次回退使用：先<span class="math inline">\(-
+c_i\)</span>，再最多加<span class="math inline">\(a_i\)</span>，净增<span class="math inline">\(a_i
+- c_i\)</span></li>
+</ul>
+<p>所以每多花一次回退，第<span class="math inline">\(i\)</span>种跳法能带来的额外最大净前进是：<span class="math inline">\(W_i = a_i b_i - c_i\)</span></p>
+<p>如果我们有<span class="math inline">\(R\)</span>次的回退预算，为了走的最远，显然把每一次回退用到<span class="math inline">\(W_i\)</span>最大的那种跳法上最划算</p>
+<p>令<span class="math inline">\(W = max W_i\)</span>，则：</p>
+<ul>
+<li>若<span class="math inline">\(W \leq
+0\)</span>，说明任何回退都不能让最远位置超过<span class="math inline">\(Dis\)</span>，所以<span class="math inline">\(x
+&gt; Dis\)</span>时无解</li>
+<li>否则最远能够跳到<span class="math inline">\(Dis + R \times
+W\)</span></li>
+</ul>
+<ol start="3" type="1">
+<li>最少回退次数</li>
+</ol>
+<p>要到达<span class="math inline">\(x\)</span>，最少<span class="math inline">\(R\)</span>满足：<span class="math inline">\(Dis +
+R \times W \geq x\)</span>,因此<span class="math inline">\(R = \lceil
+\frac{x-Dis}{W} \rceil\)</span></p>
+<p>每组数据<span class="math inline">\(O(n)\)</span></p>
+<h3 id="代码-1">代码</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">getceil</span> <span class="params">(ll a, ll b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (a + b - <span class="number">1</span>) / b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	ll x;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; x;</span><br><span class="line">	ll MXB = <span class="number">0</span>;</span><br><span class="line">	ll w = LLONG_MIN;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) &#123;</span><br><span class="line">		ll a, b, c;</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">		MXB += a * (b - <span class="number">1</span>);</span><br><span class="line">		w = <span class="built_in">max</span>(w, a * b - c);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(x &lt;= MXB) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(w &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="built_in">getceil</span>(x - MXB, w) &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="c1.xor-convenience-easy-version">C1.XOR Convenience (Easy
+Version)</h2>
+<h3 id="题目描述-2">题目描述</h3>
+<p>给定一个整数<span class="math inline">\(n\)</span>，构造一个1到<span class="math inline">\(n\)</span>的排列<span class="math inline">\(p\)</span>，要求：</p>
+<ul>
+<li>对于每个<span class="math inline">\(i(2 \leq i \leq n -
+1)\)</span>，存在某个位置<span class="math inline">\(j \geq
+i\)</span>，使得<span class="math inline">\(p_i = p_j \oplus
+i\)</span>，<span class="math inline">\(\oplus\)</span>是异或</li>
+</ul>
+<p>题目保证一定存在解，输出任意一个即可。</p>
+<h3 id="数据范围-2">数据范围</h3>
+<p>输入<span class="math inline">\(T(1 \leq T \leq
+10000)\)</span>组数据，对于每组数据：</p>
+<ul>
+<li>输入一个数<span class="math inline">\(n(3 \leq n \leq 2 \times
+10^5)\)</span></li>
+<li><span class="math inline">\(\sum n \leq 2 \times 10^5\)</span></li>
+</ul>
+<h3 id="题解-2">题解</h3>
+<p>直接让所有<span class="math inline">\(i\)</span>取同一个<span class="math inline">\(j = n\)</span>。</p>
+<p>令：</p>
+<ul>
+<li><span class="math inline">\(p_n = 1\)</span></li>
+<li>对所有<span class="math inline">\(i =
+2,3,\dots,n-1\)</span>，令<span class="math inline">\(p_i = 1 \oplus
+i\)</span>，也就是把i的最低位反转，偶数变成<span class="math inline">\(i+1\)</span>，奇数变成<span class="math inline">\(i-1\)</span></li>
+<li>剩下没用到的那个数填到<span class="math inline">\(p_1\)</span></li>
+</ul>
+<p>为什么满足条件？</p>
+<p>对任意<span class="math inline">\(i \in [2,n - 1]\)</span>，取<span class="math inline">\(j = n\)</span>，则<span class="math inline">\(p_j
+\oplus i = p_n \oplus i = 1 \oplus i = p_i\)</span>直接成立</p>
+<p>为什么是排列？</p>
+<ul>
+<li>映射<span class="math inline">\(i \rightarrow i \oplus
+1\)</span>在不同<span class="math inline">\(i\)</span>上结果不同，所以<span class="math inline">\(p_2,\dots,p_{n-1}\)</span>互不相同</li>
+<li>再加上<span class="math inline">\(p_n=1\)</span>，总共用了<span class="math inline">\(n-1\)</span>个不同数</li>
+<li>最后一个数填到<span class="math inline">\(p_1\)</span></li>
+</ul>
+<p>结论：若<span class="math inline">\(n\)</span>是偶数，剩下<span class="math inline">\(n\)</span>，若是奇数，剩下的是<span class="math inline">\(n-1\)</span></p>
+<p>每组数据<span class="math inline">\(O(n)\)</span></p>
+<h3 id="代码-2">代码</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">solve</span> <span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">p</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	p[n] = <span class="number">1</span>;</span><br><span class="line">	vis[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n - <span class="number">1</span>;i ++) &#123;</span><br><span class="line">		p[i] = i ^ <span class="number">1</span>;</span><br><span class="line">		vis[p[i]] = <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">			p[<span class="number">1</span>] = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; p = <span class="built_in">solve</span>(n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cout &lt;&lt; p[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="c2.xor-convenience-hard-version">C2.XOR-convenience (Hard
+Version)</h2>
+<h3 id="题目描述-3">题目描述</h3>
+<p>给定一个整数<span class="math inline">\(n\)</span>，构造一个1到<span class="math inline">\(n\)</span>的排列<span class="math inline">\(p\)</span>，要求：</p>
+<ul>
+<li>对于每个<span class="math inline">\(i(1 \leq i \leq n -
+1)\)</span>，存在某个位置<span class="math inline">\(j \geq
+i\)</span>，使得<span class="math inline">\(p_i = p_j \oplus
+i\)</span>，<span class="math inline">\(\oplus\)</span>是异或</li>
+</ul>
+<p>与C1不一样的是<span class="math inline">\(i\)</span>的取值变成最小是1</p>
+<h3 id="数据范围-3">数据范围</h3>
+<p>输入<span class="math inline">\(T(1 \leq T \leq
+10000)\)</span>组数据，对于每组数据：</p>
+<ul>
+<li>输入一个数<span class="math inline">\(n(3 \leq n \leq 2 \times
+10^5)\)</span></li>
+<li><span class="math inline">\(\sum n \leq 2 \times 10^5\)</span></li>
+</ul>
+<h3 id="题解-3">题解</h3>
+<ol type="1">
+<li>新增的<span class="math inline">\(i=1\)</span>会多出什么要求？</li>
+</ol>
+<p>对<span class="math inline">\(i=1\)</span>，条件变成：<span class="math inline">\(\exist j \in [1, n]\)</span>，使得<span class="math inline">\(p_1 = p_j \oplus 1\)</span>，等价于<span class="math inline">\(p_j = p_1 \oplus 1\)</span>，所以必须满足<span class="math inline">\(p_1 \oplus 1 \in [1,n]\)</span></p>
+<p>特别的：</p>
+<ul>
+<li><span class="math inline">\(p_1 \neq 1(1 \oplus 1 = 0 \notin
+[1,n])\)</span></li>
+<li>如果<span class="math inline">\(p_1 =n\)</span>且<span class="math inline">\(n\)</span>是偶数，则<span class="math inline">\(n
+\oplus 1 = n + 1\)</span>越界，不行</li>
+</ul>
+<ol start="2" type="1">
+<li>哪些<span class="math inline">\(n\)</span>会无解？</li>
+</ol>
+<p><strong>当<span class="math inline">\(n=2^k\)</span>的时候无解</strong></p>
+<p>证明：</p>
+<ul>
+<li>数字n必须出现在某个位置k</li>
+<li>若<span class="math inline">\(k \leq n - 1\)</span>，则对<span class="math inline">\(i=k\)</span>必须存在<span class="math inline">\(j
+\geq k\)</span>使得<span class="math inline">\(p_k = p_j \oplus
+k\)</span>，即<span class="math inline">\(p_j = n \oplus k\)</span></li>
+<li>但当<span class="math inline">\(n = 2^k\)</span>时，任意<span class="math inline">\(1 \leq k \leq n - 1\)</span>都有<span class="math inline">\(n \oplus k = n + k &gt; n\)</span>，不合理</li>
+<li>因此只能<span class="math inline">\(p_n = n\)</span>，再看<span class="math inline">\(i = n-1\)</span>，唯一可选的就是<span class="math inline">\(j = n\)</span>，于是<span class="math inline">\(p_{n-1}=p_n\oplus(n-1)=n\oplus(n-1)=2n-1 &gt;
+n\)</span>也矛盾</li>
+</ul>
+<p>所以<span class="math inline">\(n=2^k\)</span>一定无解</p>
+<ol start="3" type="1">
+<li>构造(当<span class="math inline">\(n \neq 2^k\)</span>)</li>
+</ol>
+<p>先做一个几乎全对的场景：</p>
+<ul>
+<li><p>令<span class="math inline">\(p_n = 1\)</span></p></li>
+<li><p>对<span class="math inline">\(i = 2,\dots,n-1\)</span>，令<span class="math inline">\(p_i = i \oplus 1\)</span>，则对<span class="math inline">\(i \geq 2\)</span>，直接取<span class="math inline">\(j = n\)</span>满足<span class="math inline">\(p_i
+= 1 \oplus i\)</span>，剩下只需要处理<span class="math inline">\(i=1\)</span></p>
+<ol type="1">
+<li>n为奇数</li>
+</ol>
+<p>此时上面的构造用到了所有数，缺的唯一就是<span class="math inline">\(n-1\)</span>，令<span class="math inline">\(p_1 =
+n-1\)</span></p>
+<ol start="2" type="1">
+<li>n为偶数</li>
+</ol>
+<p>此时缺的数是n，如果直接让<span class="math inline">\(p_1 =
+n\)</span>，则<span class="math inline">\(n \oplus 1 &gt;
+n\)</span>，不行，考虑一个调整</p>
+<p>令<span class="math inline">\(k = lowbit(n)\)</span>，然后交换<span class="math inline">\(p_1\)</span>和<span class="math inline">\(p_k\)</span></p>
+<ul>
+<li><span class="math inline">\(i=1\)</span>会变成<span class="math inline">\(p_1 = k \oplus
+1\)</span>，其异或1得到k，一定在排列中</li>
+<li><span class="math inline">\(i=k\)</span>位置放了<span class="math inline">\(n\)</span>，需要的伙伴是<span class="math inline">\(n \oplus k =
+n-k\)</span>，它在构造中出现在位置<span class="math inline">\((n-k)
+\oplus 1 = (n-k) + 1 \geq k\)</span>，满足<span class="math inline">\(j
+\geq i\)</span></li>
+<li>其余<span class="math inline">\(i \geq 2,i\neq k\)</span>，仍用<span class="math inline">\(j = n\)</span>解决</li>
+</ul></li>
+</ul>
+<h3 id="代码-3">代码</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> lowbit(x) x &amp; -x</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">if</span>(((n - <span class="number">1</span>) &amp; n) == <span class="number">0</span>) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">p</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	p[n] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n - <span class="number">1</span>;i ++) p[i] = i ^ <span class="number">1</span>;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	vis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt; n;i ++) vis[p[i]] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">			p[<span class="number">1</span>] = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(n % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="type">int</span> k = <span class="built_in">lowbit</span>(n &amp; -n);</span><br><span class="line">		<span class="built_in">swap</span>(p[<span class="number">1</span>], p[k]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		cout &lt;&lt; p[i] &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="d1.little-string-easy-version-d2.little-string-hard-version">D1.Little
+String (Easy Version) / D2.Little String (Hard Version)</h2>
+<h3 id="题目描述-4">题目描述</h3>
+<p>对于一个长度为n的串<span class="math inline">\(w_1,w_2,\dots,w_n\)</span>（只含0/1），定义<span class="math inline">\(f(w)\)</span>为满足下列条件的排列<span class="math inline">\(p\)</span>（排列的是<span class="math inline">\([0,1,\dots,n-1]\)</span>的个数）:</p>
+<p>对每个<span class="math inline">\(i=1\dots n\)</span>：</p>
+<ul>
+<li>若<span class="math inline">\(w_i=1\)</span>，则存在某个子数组<span class="math inline">\(p_l \dots p_r\)</span>，使得<span class="math inline">\(mex(p_l \dots p_r) = i\)</span></li>
+<li>若<span class="math inline">\(w_i =
+0\)</span>，则不存在任何子数组的mex等于i</li>
+</ul>
+<p>现给定串s（含0/1/?），可把每个?替换成0/1得到某个w。给定整数c，要在所有可行w中找最小的<span class="math inline">\(f(w)\)</span>，要求<span class="math inline">\(f(w)\)</span>不被c整除；若不存在输出-1，答案对<span class="math inline">\(10^9+7\)</span>取模输出</p>
+<h3 id="数据范围-4">数据范围</h3>
+<p>输入<span class="math inline">\(T(1 \leq T \leq
+10000)\)</span>组数据，对于每组数据：</p>
+<ul>
+<li>第一行输入<span class="math inline">\(n,c (3 \leq n \leq 2 \times
+10^5, 1 \leq c \leq 10^9)\)</span></li>
+<li>第二行一个字符串s</li>
+<li><span class="math inline">\(\sum n \leq 2 \times 10^5\)</span></li>
+</ul>
+<h3 id="题解-4">题解</h3>
+<p>对任意排列p，令pos(x)表示数x在p中的位置</p>
+<p>子数组mex=i(<span class="math inline">\(1 \leq i \leq n -
+1\)</span>)存在的充要条件：</p>
+<p>设 <span class="math display">\[
+L = min_{0 \leq x \leq i - 1} pos(x), R = max_{0 \leq x \leq i - 1}
+pos(x).
+\]</span> 则存在子数组mex为i当且仅当<span class="math inline">\(pos(i)
+\notin [L,R]\)</span></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"># 贪心</a>
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+              <a href="/tags/%E6%9E%84%E9%80%A0/" rel="tag"># 构造</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026-01-21-AcWing1010-%E5%AF%BC%E5%BC%B9%E6%8B%A6%E6%88%AA.html" rel="prev" title="AcWing1010.导弹拦截">
+                  <i class="fa fa-angle-left"></i> AcWing1010.导弹拦截
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Allorkiya</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

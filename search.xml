@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AcWing1010.导弹拦截</title>
-    <url>/2026-01-21-AcWing1010-%E5%AF%BC%E5%BC%B9%E6%8B%A6%E6%88%AA.html</url>
-    <content><![CDATA[<span id="more"></span>
-<h3 id="section"></h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; a;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; x) &#123;</span><br><span class="line">        a.<span class="built_in">push_back</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> n = a.<span class="built_in">size</span>();</span><br><span class="line">    a.<span class="built_in">resize</span>(n);</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;<span class="built_in">f</span>(n),g;</span><br><span class="line">    f[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt; n;i ++) &#123;</span><br><span class="line">        f[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j &lt; i;j ++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[j] &gt;= a[i]) &#123;</span><br><span class="line">                f[i]= <span class="built_in">max</span>(f[i], f[j] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) res = <span class="built_in">max</span>(res, f[i]);</span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; res &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(g.<span class="built_in">size</span>() == <span class="number">0</span>) &#123;</span><br><span class="line">            g.<span class="built_in">push_back</span>(a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">auto</span> pos = <span class="built_in">lower_bound</span>(g.<span class="built_in">begin</span>(), g.<span class="built_in">end</span>(), a[i]);</span><br><span class="line">            <span class="keyword">if</span>(pos == g.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                g.<span class="built_in">push_back</span>(a[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                *pos = a[i];</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; g.<span class="built_in">size</span>() &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法题</category>
-      </categories>
-      <tags>
-        <tag>dp</tag>
-        <tag>Dilworth定理</tag>
-        <tag>贪心</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>1074</title>
-    <url>/2026-01-20-Codeforces_Round_1074(div4).html</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
     <title>我的近期计划</title>
     <url>/2026-01-11-%E6%88%91%E7%9A%84%E8%BF%91%E6%9C%9F%E8%AE%A1%E5%88%92.html</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh,there's something wrong.Check and try again." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -42,6 +20,293 @@
       </categories>
   </entry>
   <entry>
+    <title>codeforces_1075_Div2</title>
+    <url>/2026-01-23-codeforces-1075-Div2.html</url>
+    <content><![CDATA[<p>题面写的有点构思…</p>
+<span id="more"></span>
+<h2 id="a.table-with-numbers">A.Table with Numbers</h2>
+<h3 id="题目描述">题目描述</h3>
+<p>给定一个<span class="math inline">\(h \times
+l\)</span>的表格，初始全为0，给定数组<span class="math inline">\(a_1,
+\dots, a_n\)</span>，你可以选出<span class="math inline">\(2k \leq
+n\)</span>个数，把它们分成<span class="math inline">\(k\)</span>对<span class="math inline">\((x,y)\)</span>。对每一对<span class="math inline">\((x,y)\)</span>，如果表格中存在第x行第y列（即<span class="math inline">\(1 \leq x \leq h \; \and \; 1 \leq y \leq
+l\)</span>），则该格子加一，否则这对不产生作用，问表格中元素的最大值。</p>
+<h3 id="数据范围">数据范围</h3>
+<p>输入<span class="math inline">\(T(1 \leq T \leq
+500)\)</span>组数据，对于每组数据：</p>
+<ul>
+<li>第一行<span class="math inline">\(n, h, l(2 \leq n \leq 100, 1 \leq
+h,l \leq 1000)\)</span></li>
+<li>第二行<span class="math inline">\(a_1 \dots a_n(1 \leq a_i \leq
+1000)\)</span></li>
+</ul>
+<h3 id="题解">题解</h3>
+<p>把数组元素是否能当行/列分类：</p>
+<ul>
+<li>两个都可以：<span class="math inline">\(\leq min(h, l)\)</span></li>
+<li>只能当行：<span class="math inline">\(\leq h\)</span>但<span class="math inline">\(&gt; l\)</span> （只在<span class="math inline">\(l &lt; h\)</span>的时候出现）</li>
+<li>只能当列：<span class="math inline">\(\leq l\)</span>但<span class="math inline">\(&gt;h\)</span> （只在<span class="math inline">\(h
+&lt; l\)</span>的时候出现）</li>
+</ul>
+<p>如果想做出<span class="math inline">\(k\)</span>个有效对：</p>
+<ul>
+<li>需要<span class="math inline">\(k\)</span>个行元素：两个都可以+只能当行</li>
+<li>需要<span class="math inline">\(k\)</span>个列元素：两个都可以+只能当列</li>
+<li>两个都可以的元素要在当行/列分配，不能重复用</li>
+</ul>
+<p>只要检查<span class="math inline">\(k\)</span>是否可行：</p>
+<ul>
+<li>行还缺：<span class="math inline">\(max(0, k-onlyRow)\)</span></li>
+<li>列还缺：<span class="math inline">\(max(0, k -
+onlyCol)\)</span></li>
+<li>这两部分都要从两个都可以的元素拿，要求：<span class="math inline">\(max(0,k-onlyRow) + max(0,k-onlyCol) \leq
+both\)</span></li>
+</ul>
+<p>复杂度每组<span class="math inline">\(O(n)\)</span></p>
+<h3 id="代码">代码</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span> <span class="params">(<span class="type">int</span> i, <span class="type">int</span> c1, <span class="type">int</span> c2, <span class="type">int</span> two)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n1 = <span class="built_in">max</span>(<span class="number">0</span>, i - c1);</span><br><span class="line">	<span class="type">int</span> n2 = <span class="built_in">max</span>(<span class="number">0</span>, i - c2);</span><br><span class="line">	<span class="keyword">return</span> n1 + n2 &lt;= two;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n, h, l;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; h &gt;&gt; l;</span><br><span class="line">	<span class="type">int</span> mn = <span class="built_in">min</span>(h, l);</span><br><span class="line">	<span class="type">int</span> cnth = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> cntl = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> two = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) &#123;</span><br><span class="line">		<span class="type">int</span> x;</span><br><span class="line">		cin &gt;&gt; x;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= h) cnth ++;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= l) cntl ++;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= mn) two ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> c1 = cnth - two;</span><br><span class="line">	<span class="type">int</span> c2 = cntl - two;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = n / <span class="number">2</span>;i &gt;= <span class="number">0</span>; i --) &#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">check</span>(i, c1, c2, two)) &#123;</span><br><span class="line">			cout &lt;&lt; i &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="b.the-curse-of-the-frog">B.The Curse of the Frog</h2>
+<h3 id="题目描述-1">题目描述</h3>
+<p>起点在0，共有<span class="math inline">\(n\)</span>种跳法：</p>
+<ul>
+<li>用第<span class="math inline">\(i\)</span>种跳法依次：如果当前在<span class="math inline">\(k\)</span>，则可以落在任意点<span class="math inline">\([k,k+a_i]\)</span></li>
+<li>但第<span class="math inline">\(i\)</span>种跳法每到第<span class="math inline">\(b_i,2b_i,3b_i,\dots\)</span>，使用前会先回退<span class="math inline">\(c_i\)</span>，即从<span class="math inline">\(k\)</span>先变成<span class="math inline">\(k-c_i\)</span>，再落在<span class="math inline">\([k-c_i,k-c_i+a_i]\)</span></li>
+</ul>
+<p>目标是到达点<span class="math inline">\(x\)</span>，输出最少回退次数，如果到不了输出-1.</p>
+<h3 id="数据范围-1">数据范围</h3>
+<p>输入<span class="math inline">\(T(1 \leq T \leq
+10000)\)</span>组数据，对于每组数据：</p>
+<ul>
+<li>第一行<span class="math inline">\(n, x(1 \leq n \leq 10^5, 1 \leq x
+\leq 10^{18})\)</span></li>
+<li>之后的n行，每行<span class="math inline">\(a_i,b_i,c_i(1 \leq
+a_i,b_i,c_i \leq 10^6)\)</span></li>
+<li><span class="math inline">\(\sum n \leq 10^5\)</span></li>
+</ul>
+<h3 id="题解-1">题解</h3>
+<p>我们关心，给定回退次数<span class="math inline">\(R\)</span>，最远能到多远？因为每次落点是一个连续区间内任意一个点，只要最远能到<span class="math inline">\(\geq
+x\)</span>，就能通过最后几步少跳一点精确落在<span class="math inline">\(x\)</span></p>
+<ol type="1">
+<li>0次回退能白嫖到多远？</li>
+</ol>
+<p>对第<span class="math inline">\(i\)</span>种跳法，如果不想触发回退，就是最多用到第<span class="math inline">\(b_i - 1\)</span>次，所以第<span class="math inline">\(i\)</span>种能免费提供的最大前进距离是<span class="math inline">\(a_i \times (b_i - 1)\)</span></p>
+<p>因此，总最远距离<span class="math inline">\(Dis = \sum_{i=1}^n a_i
+\times (b_i - 1)\)</span>，若<span class="math inline">\(x \leq
+Dis\)</span>，则答案就是0.</p>
+<ol start="2" type="1">
+<li>一次回退的价值？</li>
+</ol>
+<p>如果决定让第<span class="math inline">\(i\)</span>种跳法触发一次回退，那么最优的方式是：</p>
+<ul>
+<li>先用它若干次到临界，每触发1次回退，总能安排出一整段“包含恰好1次回退”的使用块</li>
+<li>这段块里共有<span class="math inline">\(b_i\)</span>次使用，其中<span class="math inline">\(b_i - 1\)</span>次正常，每次最多<span class="math inline">\(+ a_i\)</span></li>
+<li>那一次回退使用：先<span class="math inline">\(-
+c_i\)</span>，再最多加<span class="math inline">\(a_i\)</span>，净增<span class="math inline">\(a_i
+- c_i\)</span></li>
+</ul>
+<p>所以每多花一次回退，第<span class="math inline">\(i\)</span>种跳法能带来的额外最大净前进是：<span class="math inline">\(W_i = a_i b_i - c_i\)</span></p>
+<p>如果我们有<span class="math inline">\(R\)</span>次的回退预算，为了走的最远，显然把每一次回退用到<span class="math inline">\(W_i\)</span>最大的那种跳法上最划算</p>
+<p>令<span class="math inline">\(W = max W_i\)</span>，则：</p>
+<ul>
+<li>若<span class="math inline">\(W \leq
+0\)</span>，说明任何回退都不能让最远位置超过<span class="math inline">\(Dis\)</span>，所以<span class="math inline">\(x
+&gt; Dis\)</span>时无解</li>
+<li>否则最远能够跳到<span class="math inline">\(Dis + R \times
+W\)</span></li>
+</ul>
+<ol start="3" type="1">
+<li>最少回退次数</li>
+</ol>
+<p>要到达<span class="math inline">\(x\)</span>，最少<span class="math inline">\(R\)</span>满足：<span class="math inline">\(Dis +
+R \times W \geq x\)</span>,因此<span class="math inline">\(R = \lceil
+\frac{x-Dis}{W} \rceil\)</span></p>
+<p>每组数据<span class="math inline">\(O(n)\)</span></p>
+<h3 id="代码-1">代码</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">getceil</span> <span class="params">(ll a, ll b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (a + b - <span class="number">1</span>) / b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	ll x;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; x;</span><br><span class="line">	ll MXB = <span class="number">0</span>;</span><br><span class="line">	ll w = LLONG_MIN;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) &#123;</span><br><span class="line">		ll a, b, c;</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">		MXB += a * (b - <span class="number">1</span>);</span><br><span class="line">		w = <span class="built_in">max</span>(w, a * b - c);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(x &lt;= MXB) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(w &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="built_in">getceil</span>(x - MXB, w) &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="c1.xor-convenience-easy-version">C1.XOR Convenience (Easy
+Version)</h2>
+<h3 id="题目描述-2">题目描述</h3>
+<p>给定一个整数<span class="math inline">\(n\)</span>，构造一个1到<span class="math inline">\(n\)</span>的排列<span class="math inline">\(p\)</span>，要求：</p>
+<ul>
+<li>对于每个<span class="math inline">\(i(2 \leq i \leq n -
+1)\)</span>，存在某个位置<span class="math inline">\(j \geq
+i\)</span>，使得<span class="math inline">\(p_i = p_j \oplus
+i\)</span>，<span class="math inline">\(\oplus\)</span>是异或</li>
+</ul>
+<p>题目保证一定存在解，输出任意一个即可。</p>
+<h3 id="数据范围-2">数据范围</h3>
+<p>输入<span class="math inline">\(T(1 \leq T \leq
+10000)\)</span>组数据，对于每组数据：</p>
+<ul>
+<li>输入一个数<span class="math inline">\(n(3 \leq n \leq 2 \times
+10^5)\)</span></li>
+<li><span class="math inline">\(\sum n \leq 2 \times 10^5\)</span></li>
+</ul>
+<h3 id="题解-2">题解</h3>
+<p>直接让所有<span class="math inline">\(i\)</span>取同一个<span class="math inline">\(j = n\)</span>。</p>
+<p>令：</p>
+<ul>
+<li><span class="math inline">\(p_n = 1\)</span></li>
+<li>对所有<span class="math inline">\(i =
+2,3,\dots,n-1\)</span>，令<span class="math inline">\(p_i = 1 \oplus
+i\)</span>，也就是把i的最低位反转，偶数变成<span class="math inline">\(i+1\)</span>，奇数变成<span class="math inline">\(i-1\)</span></li>
+<li>剩下没用到的那个数填到<span class="math inline">\(p_1\)</span></li>
+</ul>
+<p>为什么满足条件？</p>
+<p>对任意<span class="math inline">\(i \in [2,n - 1]\)</span>，取<span class="math inline">\(j = n\)</span>，则<span class="math inline">\(p_j
+\oplus i = p_n \oplus i = 1 \oplus i = p_i\)</span>直接成立</p>
+<p>为什么是排列？</p>
+<ul>
+<li>映射<span class="math inline">\(i \rightarrow i \oplus
+1\)</span>在不同<span class="math inline">\(i\)</span>上结果不同，所以<span class="math inline">\(p_2,\dots,p_{n-1}\)</span>互不相同</li>
+<li>再加上<span class="math inline">\(p_n=1\)</span>，总共用了<span class="math inline">\(n-1\)</span>个不同数</li>
+<li>最后一个数填到<span class="math inline">\(p_1\)</span></li>
+</ul>
+<p>结论：若<span class="math inline">\(n\)</span>是偶数，剩下<span class="math inline">\(n\)</span>，若是奇数，剩下的是<span class="math inline">\(n-1\)</span></p>
+<p>每组数据<span class="math inline">\(O(n)\)</span></p>
+<h3 id="代码-2">代码</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">solve</span> <span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">p</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	p[n] = <span class="number">1</span>;</span><br><span class="line">	vis[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n - <span class="number">1</span>;i ++) &#123;</span><br><span class="line">		p[i] = i ^ <span class="number">1</span>;</span><br><span class="line">		vis[p[i]] = <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">			p[<span class="number">1</span>] = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; p = <span class="built_in">solve</span>(n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cout &lt;&lt; p[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="c2.xor-convenience-hard-version">C2.XOR-convenience (Hard
+Version)</h2>
+<h3 id="题目描述-3">题目描述</h3>
+<p>给定一个整数<span class="math inline">\(n\)</span>，构造一个1到<span class="math inline">\(n\)</span>的排列<span class="math inline">\(p\)</span>，要求：</p>
+<ul>
+<li>对于每个<span class="math inline">\(i(1 \leq i \leq n -
+1)\)</span>，存在某个位置<span class="math inline">\(j \geq
+i\)</span>，使得<span class="math inline">\(p_i = p_j \oplus
+i\)</span>，<span class="math inline">\(\oplus\)</span>是异或</li>
+</ul>
+<p>与C1不一样的是<span class="math inline">\(i\)</span>的取值变成最小是1</p>
+<h3 id="数据范围-3">数据范围</h3>
+<p>输入<span class="math inline">\(T(1 \leq T \leq
+10000)\)</span>组数据，对于每组数据：</p>
+<ul>
+<li>输入一个数<span class="math inline">\(n(3 \leq n \leq 2 \times
+10^5)\)</span></li>
+<li><span class="math inline">\(\sum n \leq 2 \times 10^5\)</span></li>
+</ul>
+<h3 id="题解-3">题解</h3>
+<ol type="1">
+<li>新增的<span class="math inline">\(i=1\)</span>会多出什么要求？</li>
+</ol>
+<p>对<span class="math inline">\(i=1\)</span>，条件变成：<span class="math inline">\(\exist j \in [1, n]\)</span>，使得<span class="math inline">\(p_1 = p_j \oplus 1\)</span>，等价于<span class="math inline">\(p_j = p_1 \oplus 1\)</span>，所以必须满足<span class="math inline">\(p_1 \oplus 1 \in [1,n]\)</span></p>
+<p>特别的：</p>
+<ul>
+<li><span class="math inline">\(p_1 \neq 1(1 \oplus 1 = 0 \notin
+[1,n])\)</span></li>
+<li>如果<span class="math inline">\(p_1 =n\)</span>且<span class="math inline">\(n\)</span>是偶数，则<span class="math inline">\(n
+\oplus 1 = n + 1\)</span>越界，不行</li>
+</ul>
+<ol start="2" type="1">
+<li>哪些<span class="math inline">\(n\)</span>会无解？</li>
+</ol>
+<p><strong>当<span class="math inline">\(n=2^k\)</span>的时候无解</strong></p>
+<p>证明：</p>
+<ul>
+<li>数字n必须出现在某个位置k</li>
+<li>若<span class="math inline">\(k \leq n - 1\)</span>，则对<span class="math inline">\(i=k\)</span>必须存在<span class="math inline">\(j
+\geq k\)</span>使得<span class="math inline">\(p_k = p_j \oplus
+k\)</span>，即<span class="math inline">\(p_j = n \oplus k\)</span></li>
+<li>但当<span class="math inline">\(n = 2^k\)</span>时，任意<span class="math inline">\(1 \leq k \leq n - 1\)</span>都有<span class="math inline">\(n \oplus k = n + k &gt; n\)</span>，不合理</li>
+<li>因此只能<span class="math inline">\(p_n = n\)</span>，再看<span class="math inline">\(i = n-1\)</span>，唯一可选的就是<span class="math inline">\(j = n\)</span>，于是<span class="math inline">\(p_{n-1}=p_n\oplus(n-1)=n\oplus(n-1)=2n-1 &gt;
+n\)</span>也矛盾</li>
+</ul>
+<p>所以<span class="math inline">\(n=2^k\)</span>一定无解</p>
+<ol start="3" type="1">
+<li>构造(当<span class="math inline">\(n \neq 2^k\)</span>)</li>
+</ol>
+<p>先做一个几乎全对的场景：</p>
+<ul>
+<li><p>令<span class="math inline">\(p_n = 1\)</span></p></li>
+<li><p>对<span class="math inline">\(i = 2,\dots,n-1\)</span>，令<span class="math inline">\(p_i = i \oplus 1\)</span>，则对<span class="math inline">\(i \geq 2\)</span>，直接取<span class="math inline">\(j = n\)</span>满足<span class="math inline">\(p_i
+= 1 \oplus i\)</span>，剩下只需要处理<span class="math inline">\(i=1\)</span></p>
+<ol type="1">
+<li>n为奇数</li>
+</ol>
+<p>此时上面的构造用到了所有数，缺的唯一就是<span class="math inline">\(n-1\)</span>，令<span class="math inline">\(p_1 =
+n-1\)</span></p>
+<ol start="2" type="1">
+<li>n为偶数</li>
+</ol>
+<p>此时缺的数是n，如果直接让<span class="math inline">\(p_1 =
+n\)</span>，则<span class="math inline">\(n \oplus 1 &gt;
+n\)</span>，不行，考虑一个调整</p>
+<p>令<span class="math inline">\(k = lowbit(n)\)</span>，然后交换<span class="math inline">\(p_1\)</span>和<span class="math inline">\(p_k\)</span></p>
+<ul>
+<li><span class="math inline">\(i=1\)</span>会变成<span class="math inline">\(p_1 = k \oplus
+1\)</span>，其异或1得到k，一定在排列中</li>
+<li><span class="math inline">\(i=k\)</span>位置放了<span class="math inline">\(n\)</span>，需要的伙伴是<span class="math inline">\(n \oplus k =
+n-k\)</span>，它在构造中出现在位置<span class="math inline">\((n-k)
+\oplus 1 = (n-k) + 1 \geq k\)</span>，满足<span class="math inline">\(j
+\geq i\)</span></li>
+<li>其余<span class="math inline">\(i \geq 2,i\neq k\)</span>，仍用<span class="math inline">\(j = n\)</span>解决</li>
+</ul></li>
+</ul>
+<h3 id="代码-3">代码</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> lowbit(x) x &amp; -x</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">if</span>(((n - <span class="number">1</span>) &amp; n) == <span class="number">0</span>) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">p</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	p[n] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n - <span class="number">1</span>;i ++) p[i] = i ^ <span class="number">1</span>;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	vis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt; n;i ++) vis[p[i]] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">			p[<span class="number">1</span>] = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(n % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="type">int</span> k = <span class="built_in">lowbit</span>(n &amp; -n);</span><br><span class="line">		<span class="built_in">swap</span>(p[<span class="number">1</span>], p[k]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		cout &lt;&lt; p[i] &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="d1.little-string-easy-version-d2.little-string-hard-version">D1.Little
+String (Easy Version) / D2.Little String (Hard Version)</h2>
+<h3 id="题目描述-4">题目描述</h3>
+<p>对于一个长度为n的串<span class="math inline">\(w_1,w_2,\dots,w_n\)</span>（只含0/1），定义<span class="math inline">\(f(w)\)</span>为满足下列条件的排列<span class="math inline">\(p\)</span>（排列的是<span class="math inline">\([0,1,\dots,n-1]\)</span>的个数）:</p>
+<p>对每个<span class="math inline">\(i=1\dots n\)</span>：</p>
+<ul>
+<li>若<span class="math inline">\(w_i=1\)</span>，则存在某个子数组<span class="math inline">\(p_l \dots p_r\)</span>，使得<span class="math inline">\(mex(p_l \dots p_r) = i\)</span></li>
+<li>若<span class="math inline">\(w_i =
+0\)</span>，则不存在任何子数组的mex等于i</li>
+</ul>
+<p>现给定串s（含0/1/?），可把每个?替换成0/1得到某个w。给定整数c，要在所有可行w中找最小的<span class="math inline">\(f(w)\)</span>，要求<span class="math inline">\(f(w)\)</span>不被c整除；若不存在输出-1，答案对<span class="math inline">\(10^9+7\)</span>取模输出</p>
+<h3 id="数据范围-4">数据范围</h3>
+<p>输入<span class="math inline">\(T(1 \leq T \leq
+10000)\)</span>组数据，对于每组数据：</p>
+<ul>
+<li>第一行输入<span class="math inline">\(n,c (3 \leq n \leq 2 \times
+10^5, 1 \leq c \leq 10^9)\)</span></li>
+<li>第二行一个字符串s</li>
+<li><span class="math inline">\(\sum n \leq 2 \times 10^5\)</span></li>
+</ul>
+<h3 id="题解-4">题解</h3>
+<p>对任意排列p，令pos(x)表示数x在p中的位置</p>
+<p>子数组mex=i(<span class="math inline">\(1 \leq i \leq n -
+1\)</span>)存在的充要条件：</p>
+<p>设 <span class="math display">\[
+L = min_{0 \leq x \leq i - 1} pos(x), R = max_{0 \leq x \leq i - 1}
+pos(x).
+\]</span> 则存在子数组mex为i当且仅当<span class="math inline">\(pos(i)
+\notin [L,R]\)</span></p>
+]]></content>
+      <categories>
+        <category>比赛</category>
+        <category>算法题</category>
+        <category>Codeforces</category>
+      </categories>
+      <tags>
+        <tag>贪心</tag>
+        <tag>数学</tag>
+        <tag>构造</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AcWing1010.导弹拦截</title>
+    <url>/2026-01-21-AcWing1010-%E5%AF%BC%E5%BC%B9%E6%8B%A6%E6%88%AA.html</url>
+    <content><![CDATA[<span id="more"></span>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; a;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; x) &#123;</span><br><span class="line">        a.<span class="built_in">push_back</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> n = a.<span class="built_in">size</span>();</span><br><span class="line">    a.<span class="built_in">resize</span>(n);</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;<span class="built_in">f</span>(n),g;</span><br><span class="line">    f[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt; n;i ++) &#123;</span><br><span class="line">        f[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j &lt; i;j ++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[j] &gt;= a[i]) &#123;</span><br><span class="line">                f[i]= <span class="built_in">max</span>(f[i], f[j] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) res = <span class="built_in">max</span>(res, f[i]);</span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; res &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(g.<span class="built_in">size</span>() == <span class="number">0</span>) &#123;</span><br><span class="line">            g.<span class="built_in">push_back</span>(a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">auto</span> pos = <span class="built_in">lower_bound</span>(g.<span class="built_in">begin</span>(), g.<span class="built_in">end</span>(), a[i]);</span><br><span class="line">            <span class="keyword">if</span>(pos == g.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                g.<span class="built_in">push_back</span>(a[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                *pos = a[i];</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; g.<span class="built_in">size</span>() &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法题</category>
+      </categories>
+      <tags>
+        <tag>dp</tag>
+        <tag>Dilworth定理</tag>
+        <tag>贪心</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>1074</title>
+    <url>/2026-01-20-Codeforces_Round_1074(div4).html</url>
+    <content><![CDATA[<span id="more"></span>
+]]></content>
+  </entry>
+  <entry>
     <title>牛客周赛125</title>
     <url>/2026-01-18-%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B125.html</url>
     <content><![CDATA[<ul>
@@ -55,88 +320,6 @@
         <category>比赛</category>
         <category>牛客</category>
       </categories>
-  </entry>
-  <entry>
-    <title>AtCoder Beginner Contest 440</title>
-    <url>/2026-01-10-AtCoder_Beginner_Contest%20440.html</url>
-    <content><![CDATA[<ul>
-<li>Solved: 4/7</li>
-<li>Ranking: 1373th</li>
-</ul>
-<span id="more"></span>
-<h2 id="a.octave">A.Octave</h2>
-<h3 id="题目描述">题目描述</h3>
-<p>给定X和Y，输出X乘上Y个2之后的结果</p>
-<h2 id="b.trifecta">B.Trifecta</h2>
-<h3 id="题目描述-1">题目描述</h3>
-<p>给定n个数，输出其中第一小、第二小和第三小的数所在的下标</p>
-<h3 id="题解">题解</h3>
-<p>结构体排序输出前三个元素的下标即可</p>
-<h2 id="c.striped-horse">C.Striped Horse</h2>
-<h3 id="题目描述-2">题目描述</h3>
-<p>给定n个块，每个块被涂成黑色花费整数<span class="math inline">\(C_i\)</span>，执行以下步骤把一些块涂成黑色：</p>
-<ul>
-<li><p>任选一个正整数x</p></li>
-<li><p>把所有满足<span class="math inline">\((i+x) \%2W &lt;
-W\)</span>的位置i涂成黑色</p></li>
-</ul>
-<p>最小化总花费，T组数据</p>
-<h3 id="数据范围">数据范围</h3>
-<ul>
-<li><span class="math inline">\(1 \leq T,N,W \leq 2\times
-10^5\)</span></li>
-<li><span class="math inline">\(1 \leq C_i \leq 10^9\)</span></li>
-<li><span class="math inline">\(\sum N \leq 2 \times 10^5\)</span></li>
-<li><span class="math inline">\(\sum W \leq 2 \times 10^5\)</span></li>
-</ul>
-<h3 id="思路">思路</h3>
-<p>问题等价于把<span class="math inline">\(i \%
-2W\)</span>落在某个长度为W的循环区间之内的格子全部涂黑</p>
-<p>这样就可以令M=2W，统计每个余数类<span class="math inline">\(r \in
-[0,M - 1]\)</span>上所有格子的代价： <span class="math display">\[
-cost[r] = \sum_{1 \leq i \leq N, i \; mod \; M = r} C_i
-\]</span> 则选x就等价于选出一个起点<span class="math inline">\(s \in
-[0,M-1]\)</span>，涂黑余数在<span class="math inline">\([s,s+M-1]\)</span>下的那些类，代价就是该区间cost的和，最终答案是长度为W的循环滑动窗口的最小和</p>
-<p>时间复杂度：每组<span class="math inline">\(O(N +
-W)\)</span>，则总时间复杂度为<span class="math inline">\(O(N+W)\)</span></p>
-<h3 id="代码">代码</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line">ll a[<span class="number">400010</span>];</span><br><span class="line">ll s[<span class="number">800010</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="type">int</span> n, m;</span><br><span class="line">		cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">		<span class="type">int</span> mod = m &lt;&lt; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt;= mod;i ++) a[i] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt;= mod * <span class="number">2</span> + <span class="number">1</span>;i ++) s[i] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">			<span class="type">int</span> x;</span><br><span class="line">			cin &gt;&gt; x;</span><br><span class="line">			<span class="type">int</span> r = i % mod;</span><br><span class="line">			a[r] += x;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">2</span> * mod;i ++) &#123;</span><br><span class="line">			s[i] = s[i - <span class="number">1</span>] + a[(i - <span class="number">1</span>) % mod];</span><br><span class="line">		&#125;</span><br><span class="line">		ll ans = LLONG_MAX;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; mod;i ++) &#123;</span><br><span class="line">			ans = <span class="built_in">min</span>(ans,s[i + m] - s[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>TLE了一下：用了memset赋初值</p>
-<h2 id="d.forbidden-list-2">D.Forbidden List 2</h2>
-<h3 id="题目描述-3">题目描述</h3>
-<p>给定N个不同的整数<span class="math inline">\(A_i\)</span>，给定Q个问题，每个问题j会询问大于等于<span class="math inline">\(X_j\)</span>中不在A数组内的第<span class="math inline">\(Y_j\)</span>小是多少？</p>
-<h3 id="数据范围-1">数据范围</h3>
-<ul>
-<li><span class="math inline">\(1 \leq N,Q \leq 3 \times
-10^5\)</span></li>
-<li><span class="math inline">\(1 \leq A_i,X_j,Y_j \leq
-10^9\)</span></li>
-</ul>
-<h3 id="思路-1">思路</h3>
-<p>把数组A排序，设<span class="math inline">\(B_i\)</span>表示不大于<span class="math inline">\(A_i\)</span>的缺失值个数，且B单调不降，则<span class="math inline">\(B_i= A_i - i\)</span></p>
-<p>对于每个询问<span class="math inline">\((x,y)\)</span>:</p>
-<ul>
-<li>令pos表示A中大于等于x的数的下标</li>
-<li>k = (x - 1) - pos + y，表示把问题转化为全局第k个缺失的正整数</li>
-<li>res表示找B中第一个满足大于等于k的位置</li>
-<li>则答案为k + res</li>
-</ul>
-<blockquote>
-<p>式子是怎么来的？</p>
-<p>对于一个x，missing(x)=x-cnt，cnt表示A中小于等于x的个数。</p>
-<p>而对于第k个缺失的数mk，missing(mk)=k，而missing(x)=x-cnt，所以mk-cnt=k，所以mk=k+cnt</p>
-</blockquote>
-<p>时间复杂度:<span class="math inline">\(O((N+Q)logN)\)</span></p>
-<h3 id="代码-1">代码</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">3e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="type">int</span> b[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> n, q;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; q;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		cin &gt;&gt; a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(a + <span class="number">1</span>,a + n + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		b[i] = a[i] - i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(q --) &#123;</span><br><span class="line">		<span class="type">int</span> x, y;</span><br><span class="line">		cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">		<span class="type">int</span> pos = <span class="built_in">lower_bound</span>(a + <span class="number">1</span>,a + n + <span class="number">1</span>, x) - a - <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> k = x + y - pos - <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> res = <span class="built_in">lower_bound</span>(b + <span class="number">1</span>,b + n + <span class="number">1</span>, k) - b - <span class="number">1</span>;</span><br><span class="line">		cout &lt;&lt; k + res &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>AtCoder</category>
-        <category>比赛</category>
-      </categories>
-      <tags>
-        <tag>二分查找</tag>
-      </tags>
   </entry>
   <entry>
     <title>牛客周赛126</title>
@@ -324,6 +507,88 @@ Trie节点数)\)</span></p>
       <tags>
         <tag>拓扑排序</tag>
         <tag>trie</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AtCoder Beginner Contest 440</title>
+    <url>/2026-01-10-AtCoder_Beginner_Contest%20440.html</url>
+    <content><![CDATA[<ul>
+<li>Solved: 4/7</li>
+<li>Ranking: 1373th</li>
+</ul>
+<span id="more"></span>
+<h2 id="a.octave">A.Octave</h2>
+<h3 id="题目描述">题目描述</h3>
+<p>给定X和Y，输出X乘上Y个2之后的结果</p>
+<h2 id="b.trifecta">B.Trifecta</h2>
+<h3 id="题目描述-1">题目描述</h3>
+<p>给定n个数，输出其中第一小、第二小和第三小的数所在的下标</p>
+<h3 id="题解">题解</h3>
+<p>结构体排序输出前三个元素的下标即可</p>
+<h2 id="c.striped-horse">C.Striped Horse</h2>
+<h3 id="题目描述-2">题目描述</h3>
+<p>给定n个块，每个块被涂成黑色花费整数<span class="math inline">\(C_i\)</span>，执行以下步骤把一些块涂成黑色：</p>
+<ul>
+<li><p>任选一个正整数x</p></li>
+<li><p>把所有满足<span class="math inline">\((i+x) \%2W &lt;
+W\)</span>的位置i涂成黑色</p></li>
+</ul>
+<p>最小化总花费，T组数据</p>
+<h3 id="数据范围">数据范围</h3>
+<ul>
+<li><span class="math inline">\(1 \leq T,N,W \leq 2\times
+10^5\)</span></li>
+<li><span class="math inline">\(1 \leq C_i \leq 10^9\)</span></li>
+<li><span class="math inline">\(\sum N \leq 2 \times 10^5\)</span></li>
+<li><span class="math inline">\(\sum W \leq 2 \times 10^5\)</span></li>
+</ul>
+<h3 id="思路">思路</h3>
+<p>问题等价于把<span class="math inline">\(i \%
+2W\)</span>落在某个长度为W的循环区间之内的格子全部涂黑</p>
+<p>这样就可以令M=2W，统计每个余数类<span class="math inline">\(r \in
+[0,M - 1]\)</span>上所有格子的代价： <span class="math display">\[
+cost[r] = \sum_{1 \leq i \leq N, i \; mod \; M = r} C_i
+\]</span> 则选x就等价于选出一个起点<span class="math inline">\(s \in
+[0,M-1]\)</span>，涂黑余数在<span class="math inline">\([s,s+M-1]\)</span>下的那些类，代价就是该区间cost的和，最终答案是长度为W的循环滑动窗口的最小和</p>
+<p>时间复杂度：每组<span class="math inline">\(O(N +
+W)\)</span>，则总时间复杂度为<span class="math inline">\(O(N+W)\)</span></p>
+<h3 id="代码">代码</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line">ll a[<span class="number">400010</span>];</span><br><span class="line">ll s[<span class="number">800010</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="type">int</span> n, m;</span><br><span class="line">		cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">		<span class="type">int</span> mod = m &lt;&lt; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt;= mod;i ++) a[i] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt;= mod * <span class="number">2</span> + <span class="number">1</span>;i ++) s[i] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">			<span class="type">int</span> x;</span><br><span class="line">			cin &gt;&gt; x;</span><br><span class="line">			<span class="type">int</span> r = i % mod;</span><br><span class="line">			a[r] += x;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">2</span> * mod;i ++) &#123;</span><br><span class="line">			s[i] = s[i - <span class="number">1</span>] + a[(i - <span class="number">1</span>) % mod];</span><br><span class="line">		&#125;</span><br><span class="line">		ll ans = LLONG_MAX;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; mod;i ++) &#123;</span><br><span class="line">			ans = <span class="built_in">min</span>(ans,s[i + m] - s[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>TLE了一下：用了memset赋初值</p>
+<h2 id="d.forbidden-list-2">D.Forbidden List 2</h2>
+<h3 id="题目描述-3">题目描述</h3>
+<p>给定N个不同的整数<span class="math inline">\(A_i\)</span>，给定Q个问题，每个问题j会询问大于等于<span class="math inline">\(X_j\)</span>中不在A数组内的第<span class="math inline">\(Y_j\)</span>小是多少？</p>
+<h3 id="数据范围-1">数据范围</h3>
+<ul>
+<li><span class="math inline">\(1 \leq N,Q \leq 3 \times
+10^5\)</span></li>
+<li><span class="math inline">\(1 \leq A_i,X_j,Y_j \leq
+10^9\)</span></li>
+</ul>
+<h3 id="思路-1">思路</h3>
+<p>把数组A排序，设<span class="math inline">\(B_i\)</span>表示不大于<span class="math inline">\(A_i\)</span>的缺失值个数，且B单调不降，则<span class="math inline">\(B_i= A_i - i\)</span></p>
+<p>对于每个询问<span class="math inline">\((x,y)\)</span>:</p>
+<ul>
+<li>令pos表示A中大于等于x的数的下标</li>
+<li>k = (x - 1) - pos + y，表示把问题转化为全局第k个缺失的正整数</li>
+<li>res表示找B中第一个满足大于等于k的位置</li>
+<li>则答案为k + res</li>
+</ul>
+<blockquote>
+<p>式子是怎么来的？</p>
+<p>对于一个x，missing(x)=x-cnt，cnt表示A中小于等于x的个数。</p>
+<p>而对于第k个缺失的数mk，missing(mk)=k，而missing(x)=x-cnt，所以mk-cnt=k，所以mk=k+cnt</p>
+</blockquote>
+<p>时间复杂度:<span class="math inline">\(O((N+Q)logN)\)</span></p>
+<h3 id="代码-1">代码</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">3e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="type">int</span> b[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> n, q;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; q;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		cin &gt;&gt; a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(a + <span class="number">1</span>,a + n + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		b[i] = a[i] - i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(q --) &#123;</span><br><span class="line">		<span class="type">int</span> x, y;</span><br><span class="line">		cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">		<span class="type">int</span> pos = <span class="built_in">lower_bound</span>(a + <span class="number">1</span>,a + n + <span class="number">1</span>, x) - a - <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> k = x + y - pos - <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> res = <span class="built_in">lower_bound</span>(b + <span class="number">1</span>,b + n + <span class="number">1</span>, k) - b - <span class="number">1</span>;</span><br><span class="line">		cout &lt;&lt; k + res &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>AtCoder</category>
+        <category>比赛</category>
+      </categories>
+      <tags>
+        <tag>二分查找</tag>
       </tags>
   </entry>
 </search>
