@@ -22,27 +22,29 @@
 
     <meta name="description" content="题面写的有点构思…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="codeforces_1075_Div2">
+<meta property="og:title" content="Codeforces 1075(Div2)">
 <meta property="og:url" content="http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html">
 <meta property="og:site_name" content="Workshop | 在路上">
 <meta property="og:description" content="题面写的有点构思…">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-23T14:01:01.000Z">
-<meta property="article:modified_time" content="2026-01-28T15:21:06.535Z">
+<meta property="article:modified_time" content="2026-01-29T03:40:13.656Z">
 <meta property="article:author" content="Allorkiya">
 <meta property="article:tag" content="贪心">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="构造">
+<meta property="article:tag" content="位掩码">
+<meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
 
 
 <link rel="canonical" href="http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html","path":"2026-01-23-codeforces-1075-Div2.html","title":"codeforces_1075_Div2"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html","path":"2026-01-23-codeforces-1075-Div2.html","title":"Codeforces 1075(Div2)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>codeforces_1075_Div2 | Workshop | 在路上</title>
+<title>Codeforces 1075(Div2) | Workshop | 在路上</title>
   
 
 
@@ -117,7 +119,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">8</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">7</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">10</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">7</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -168,10 +170,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#a.table-with-numbers"><span class="nav-number">1.</span> <span class="nav-text">A.Table with Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4"><span class="nav-number">1.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">1.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b.the-curse-of-the-frog"><span class="nav-number">2.</span> <span class="nav-text">B.The Curse of the Frog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-1"><span class="nav-number">2.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-1"><span class="nav-number">2.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-number">2.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c1.xor-convenience-easy-version"><span class="nav-number">3.</span> <span class="nav-text">C1.XOR Convenience (Easy
-Version)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">3.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-2"><span class="nav-number">3.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-2"><span class="nav-number">3.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="nav-number">3.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c2.xor-convenience-hard-version"><span class="nav-number">4.</span> <span class="nav-text">C2.XOR-convenience (Hard
-Version)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-3"><span class="nav-number">4.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-3"><span class="nav-number">4.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-3"><span class="nav-number">4.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="nav-number">4.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d1.little-string-easy-version-d2.little-string-hard-version"><span class="nav-number">5.</span> <span class="nav-text">D1.Little
-String (Easy Version) &#x2F; D2.Little String (Hard Version)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-4"><span class="nav-number">5.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-4"><span class="nav-number">5.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-4"><span class="nav-number">5.3.</span> <span class="nav-text">题解</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Table-with-Numbers"><span class="nav-number">1.</span> <span class="nav-text">A.Table with Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4"><span class="nav-number">1.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">1.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-The-Curse-of-the-Frog"><span class="nav-number">2.</span> <span class="nav-text">B.The Curse of the Frog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-1"><span class="nav-number">2.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-1"><span class="nav-number">2.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-number">2.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C1-XOR-Convenience-Easy-Version"><span class="nav-number">3.</span> <span class="nav-text">C1.XOR Convenience (Easy Version)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">3.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-2"><span class="nav-number">3.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-2"><span class="nav-number">3.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="nav-number">3.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C2-XOR-convenience-Hard-Version"><span class="nav-number">4.</span> <span class="nav-text">C2.XOR-convenience (Hard Version)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-3"><span class="nav-number">4.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-3"><span class="nav-number">4.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-3"><span class="nav-number">4.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="nav-number">4.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D1-Little-String-Easy-Version-D2-Little-String-Hard-Version"><span class="nav-number">5.</span> <span class="nav-text">D1.Little String (Easy Version) &#x2F; D2.Little String (Hard Version)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-4"><span class="nav-number">5.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-4"><span class="nav-number">5.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-4"><span class="nav-number">5.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-4"><span class="nav-number">5.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-Majority-Wins"><span class="nav-number">6.</span> <span class="nav-text">E.Majority Wins?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-5"><span class="nav-number">6.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4-5"><span class="nav-number">6.2.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-5"><span class="nav-number">6.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%85%E5%86%B5-B%EF%BC%9A%E5%8F%AA%E6%9C%89%E2%80%9C%E6%95%B4%E4%B8%AA%E4%B8%B2%E2%80%9D%E8%BE%BE%E5%88%B0%E6%9C%80%E5%B0%8F%E5%80%BC-S-D-%EF%BC%8C%E4%BB%BB%E4%BD%95%E7%9C%9F%E5%AD%90%E4%B8%B2%E9%83%BD%E6%BB%A1%E8%B6%B3-S-gt-D"><span class="nav-number">6.4.</span> <span class="nav-text">情况 B：只有“整个串”达到最小值 $S&#x3D;D$，任何真子串都满足 $S&gt;D$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%A3%E2%80%9C%E5%8F%AA%E6%9C%89%E6%95%B4%E4%B8%B2%E6%98%AF%E6%9C%80%E5%B0%8F%E5%AD%90%E6%AE%B5%E2%80%9D-%E2%87%94-%E2%80%9C%E4%B8%8D%E5%90%AB-11-%E4%B8%94%E4%B8%A4%E7%AB%AF%E6%98%AF-00%E2%80%9D-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%90%E7%AB%8B%EF%BC%9F"><span class="nav-number">7.</span> <span class="nav-text">那“只有整串是最小子段” ⇔ “不含 11 且两端是 00” 为什么成立？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E5%85%88%E7%9C%8B%E2%80%9C%E5%BF%85%E9%A1%BB%E4%B8%A4%E7%AB%AF%E6%98%AF-00%E2%80%9D"><span class="nav-number">7.1.</span> <span class="nav-text">4.1 先看“必须两端是 00”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E5%86%8D%E7%9C%8B%E2%80%9C%E5%BF%85%E9%A1%BB%E4%B8%8D%E5%90%AB-11%E2%80%9D"><span class="nav-number">7.2.</span> <span class="nav-text">4.2 再看“必须不含 11”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E5%8F%8D%E8%BF%87%E6%9D%A5%EF%BC%9A%E8%8B%A5%E2%80%9C%E4%B8%8D%E5%90%AB-11-%E4%B8%94%E4%B8%A4%E7%AB%AF-00%E2%80%9D%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E7%9C%9F%E5%AD%90%E4%B8%B2%E4%B8%8D%E5%8F%AF%E8%83%BD%E8%BE%BE%E5%88%B0-S-D-%EF%BC%9F"><span class="nav-number">7.3.</span> <span class="nav-text">4.3 反过来：若“不含 11 且两端 00”，为什么真子串不可能达到 $S&#x3D;D$？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-5"><span class="nav-number">7.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-%E4%B8%8D%E4%BC%9A%EF%BC%8C%E8%B6%85%E5%87%BA%E7%9B%AE%E5%89%8D%E8%83%BD%E5%8A%9B%E8%8C%83%E5%9B%B4"><span class="nav-number">8.</span> <span class="nav-text">F. 不会，超出目前能力范围</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -197,7 +196,7 @@ String (Easy Version) &#x2F; D2.Little String (Hard Version)</span></a><ol class
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -237,12 +236,12 @@ String (Easy Version) &#x2F; D2.Little String (Hard Version)</span></a><ol class
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="codeforces_1075_Div2 | Workshop | 在路上">
+      <meta itemprop="name" content="Codeforces 1075(Div2) | Workshop | 在路上">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          codeforces_1075_Div2
+          Codeforces 1075(Div2)
         </h1>
 
         <div class="post-meta-container">
@@ -260,7 +259,7 @@ String (Easy Version) &#x2F; D2.Little String (Hard Version)</span></a><ol class
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-01-28 23:21:06" itemprop="dateModified" datetime="2026-01-28T23:21:06+08:00">2026-01-28</time>
+      <time title="修改时间：2026-01-29 11:40:13" itemprop="dateModified" datetime="2026-01-29T11:40:13+08:00">2026-01-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -291,256 +290,330 @@ String (Easy Version) &#x2F; D2.Little String (Hard Version)</span></a><ol class
     
     <div class="post-body" itemprop="articleBody"><p>题面写的有点构思…</p>
 <span id="more"></span>
-<h2 id="a.table-with-numbers">A.Table with Numbers</h2>
-<h3 id="题目描述">题目描述</h3>
-<p>给定一个<span class="math inline">\(h \times
-l\)</span>的表格，初始全为0，给定数组<span class="math inline">\(a_1,
-\dots, a_n\)</span>，你可以选出<span class="math inline">\(2k \leq
-n\)</span>个数，把它们分成<span class="math inline">\(k\)</span>对<span class="math inline">\((x,y)\)</span>。对每一对<span class="math inline">\((x,y)\)</span>，如果表格中存在第x行第y列（即<span class="math inline">\(1 \leq x \leq h \; \and \; 1 \leq y \leq
-l\)</span>），则该格子加一，否则这对不产生作用，问表格中元素的最大值。</p>
-<h3 id="数据范围">数据范围</h3>
-<p>输入<span class="math inline">\(T(1 \leq T \leq
-500)\)</span>组数据，对于每组数据：</p>
+<h2 id="A-Table-with-Numbers"><a href="#A-Table-with-Numbers" class="headerlink" title="A.Table with Numbers"></a>A.Table with Numbers</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个$h \times l$的表格，初始全为0，给定数组$a_1, \dots, a_n$，你可以选出$2k \leq n$个数，把它们分成$k$对$(x,y)$。对每一对$(x,y)$，如果表格中存在第x行第y列（即$1 \leq x \leq h \; 且 \; 1 \leq y \leq l$），则该格子加一，否则这对不产生作用，问表格中元素的最大值。</p>
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><p>输入$T(1 \leq T \leq 500)$组数据，对于每组数据：</p>
 <ul>
-<li>第一行<span class="math inline">\(n, h, l(2 \leq n \leq 100, 1 \leq
-h,l \leq 1000)\)</span></li>
-<li>第二行<span class="math inline">\(a_1 \dots a_n(1 \leq a_i \leq
-1000)\)</span></li>
+<li>第一行$n, h, l(2 \leq n \leq 100, 1 \leq h,l \leq 1000)$</li>
+<li>第二行$a_1 \dots a_n(1 \leq a_i \leq 1000)$</li>
 </ul>
-<h3 id="题解">题解</h3>
-<p>把数组元素是否能当行/列分类：</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>把数组元素是否能当行/列分类：</p>
 <ul>
-<li>两个都可以：<span class="math inline">\(\leq min(h, l)\)</span></li>
-<li>只能当行：<span class="math inline">\(\leq h\)</span>但<span class="math inline">\(&gt; l\)</span> （只在<span class="math inline">\(l &lt; h\)</span>的时候出现）</li>
-<li>只能当列：<span class="math inline">\(\leq l\)</span>但<span class="math inline">\(&gt;h\)</span> （只在<span class="math inline">\(h
-&lt; l\)</span>的时候出现）</li>
+<li>两个都可以：$\leq min(h, l)$</li>
+<li>只能当行：$\leq h$但$&gt; l$ （只在$l &lt; h$的时候出现）</li>
+<li>只能当列：$\leq l$但$&gt;h$ （只在$h &lt; l$的时候出现）</li>
 </ul>
-<p>如果想做出<span class="math inline">\(k\)</span>个有效对：</p>
+<p>如果想做出$k$个有效对：</p>
 <ul>
-<li>需要<span class="math inline">\(k\)</span>个行元素：两个都可以+只能当行</li>
-<li>需要<span class="math inline">\(k\)</span>个列元素：两个都可以+只能当列</li>
+<li>需要$k$个行元素：两个都可以+只能当行</li>
+<li>需要$k$个列元素：两个都可以+只能当列</li>
 <li>两个都可以的元素要在当行/列分配，不能重复用</li>
 </ul>
-<p>只要检查<span class="math inline">\(k\)</span>是否可行：</p>
+<p>只要检查$k$是否可行：</p>
 <ul>
-<li>行还缺：<span class="math inline">\(max(0, k-onlyRow)\)</span></li>
-<li>列还缺：<span class="math inline">\(max(0, k -
-onlyCol)\)</span></li>
-<li>这两部分都要从两个都可以的元素拿，要求：<span class="math inline">\(max(0,k-onlyRow) + max(0,k-onlyCol) \leq
-both\)</span></li>
+<li>行还缺：$max(0, k-onlyRow)$</li>
+<li>列还缺：$max(0, k - onlyCol)$</li>
+<li>这两部分都要从两个都可以的元素拿，要求：$max(0,k-onlyRow) + max(0,k-onlyCol) \leq both$</li>
 </ul>
-<p>复杂度每组<span class="math inline">\(O(n)\)</span></p>
-<h3 id="代码">代码</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span> <span class="params">(<span class="type">int</span> i, <span class="type">int</span> c1, <span class="type">int</span> c2, <span class="type">int</span> two)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n1 = <span class="built_in">max</span>(<span class="number">0</span>, i - c1);</span><br><span class="line">	<span class="type">int</span> n2 = <span class="built_in">max</span>(<span class="number">0</span>, i - c2);</span><br><span class="line">	<span class="keyword">return</span> n1 + n2 &lt;= two;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n, h, l;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; h &gt;&gt; l;</span><br><span class="line">	<span class="type">int</span> mn = <span class="built_in">min</span>(h, l);</span><br><span class="line">	<span class="type">int</span> cnth = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> cntl = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> two = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) &#123;</span><br><span class="line">		<span class="type">int</span> x;</span><br><span class="line">		cin &gt;&gt; x;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= h) cnth ++;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= l) cntl ++;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= mn) two ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> c1 = cnth - two;</span><br><span class="line">	<span class="type">int</span> c2 = cntl - two;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = n / <span class="number">2</span>;i &gt;= <span class="number">0</span>; i --) &#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">check</span>(i, c1, c2, two)) &#123;</span><br><span class="line">			cout &lt;&lt; i &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="b.the-curse-of-the-frog">B.The Curse of the Frog</h2>
-<h3 id="题目描述-1">题目描述</h3>
-<p>起点在0，共有<span class="math inline">\(n\)</span>种跳法：</p>
+<p>复杂度每组$O(n)$</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span> <span class="params">(<span class="type">int</span> i, <span class="type">int</span> c1, <span class="type">int</span> c2, <span class="type">int</span> two)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n1 = <span class="built_in">max</span>(<span class="number">0</span>, i - c1);</span><br><span class="line">	<span class="type">int</span> n2 = <span class="built_in">max</span>(<span class="number">0</span>, i - c2);</span><br><span class="line">	<span class="keyword">return</span> n1 + n2 &lt;= two;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n, h, l;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; h &gt;&gt; l;</span><br><span class="line">	<span class="type">int</span> mn = <span class="built_in">min</span>(h, l);</span><br><span class="line">	<span class="type">int</span> cnth = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> cntl = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> two = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) &#123;</span><br><span class="line">		<span class="type">int</span> x;</span><br><span class="line">		cin &gt;&gt; x;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= h) cnth ++;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= l) cntl ++;</span><br><span class="line">		<span class="keyword">if</span>(x &lt;= mn) two ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> c1 = cnth - two;</span><br><span class="line">	<span class="type">int</span> c2 = cntl - two;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = n / <span class="number">2</span>;i &gt;= <span class="number">0</span>; i --) &#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">check</span>(i, c1, c2, two)) &#123;</span><br><span class="line">			cout &lt;&lt; i &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="B-The-Curse-of-the-Frog"><a href="#B-The-Curse-of-the-Frog" class="headerlink" title="B.The Curse of the Frog"></a>B.The Curse of the Frog</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>起点在0，共有$n$种跳法：</p>
 <ul>
-<li>用第<span class="math inline">\(i\)</span>种跳法依次：如果当前在<span class="math inline">\(k\)</span>，则可以落在任意点<span class="math inline">\([k,k+a_i]\)</span></li>
-<li>但第<span class="math inline">\(i\)</span>种跳法每到第<span class="math inline">\(b_i,2b_i,3b_i,\dots\)</span>，使用前会先回退<span class="math inline">\(c_i\)</span>，即从<span class="math inline">\(k\)</span>先变成<span class="math inline">\(k-c_i\)</span>，再落在<span class="math inline">\([k-c_i,k-c_i+a_i]\)</span></li>
+<li>用第$i$种跳法依次：如果当前在$k$，则可以落在任意点$[k,k+a_i]$</li>
+<li>但第$i$种跳法每到第$b_i,2b_i,3b_i,\dots$，使用前会先回退$c_i$，即从$k$先变成$k-c_i$，再落在$[k-c_i,k-c_i+a_i]$</li>
 </ul>
-<p>目标是到达点<span class="math inline">\(x\)</span>，输出最少回退次数，如果到不了输出-1.</p>
-<h3 id="数据范围-1">数据范围</h3>
-<p>输入<span class="math inline">\(T(1 \leq T \leq
-10000)\)</span>组数据，对于每组数据：</p>
+<p>目标是到达点$x$，输出最少回退次数，如果到不了输出-1.</p>
+<h3 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a>数据范围</h3><p>输入$T(1 \leq T \leq 10000)$组数据，对于每组数据：</p>
 <ul>
-<li>第一行<span class="math inline">\(n, x(1 \leq n \leq 10^5, 1 \leq x
-\leq 10^{18})\)</span></li>
-<li>之后的n行，每行<span class="math inline">\(a_i,b_i,c_i(1 \leq
-a_i,b_i,c_i \leq 10^6)\)</span></li>
-<li><span class="math inline">\(\sum n \leq 10^5\)</span></li>
+<li>第一行$n, x(1 \leq n \leq 10^5, 1 \leq x \leq 10^{18})$</li>
+<li>之后的n行，每行$a_i,b_i,c_i(1 \leq a_i,b_i,c_i \leq 10^6)$</li>
+<li>$\sum n \leq 10^5$</li>
 </ul>
-<h3 id="题解-1">题解</h3>
-<p>我们关心，给定回退次数<span class="math inline">\(R\)</span>，最远能到多远？因为每次落点是一个连续区间内任意一个点，只要最远能到<span class="math inline">\(\geq
-x\)</span>，就能通过最后几步少跳一点精确落在<span class="math inline">\(x\)</span></p>
-<ol type="1">
+<h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><p>我们关心，给定回退次数$R$，最远能到多远？因为每次落点是一个连续区间内任意一个点，只要最远能到$\geq x$，就能通过最后几步少跳一点精确落在$x$</p>
+<ol>
 <li>0次回退能白嫖到多远？</li>
 </ol>
-<p>对第<span class="math inline">\(i\)</span>种跳法，如果不想触发回退，就是最多用到第<span class="math inline">\(b_i - 1\)</span>次，所以第<span class="math inline">\(i\)</span>种能免费提供的最大前进距离是<span class="math inline">\(a_i \times (b_i - 1)\)</span></p>
-<p>因此，总最远距离<span class="math inline">\(Dis = \sum_{i=1}^n a_i
-\times (b_i - 1)\)</span>，若<span class="math inline">\(x \leq
-Dis\)</span>，则答案就是0.</p>
-<ol start="2" type="1">
+<p>对第$i$种跳法，如果不想触发回退，就是最多用到第$b_i - 1$次，所以第$i$种能免费提供的最大前进距离是$a_i \times (b_i - 1)$</p>
+<p>因此，总最远距离$Dis = \sum_{i=1}^n a_i \times (b_i - 1)$，若$x \leq Dis$，则答案就是0.</p>
+<ol>
 <li>一次回退的价值？</li>
 </ol>
-<p>如果决定让第<span class="math inline">\(i\)</span>种跳法触发一次回退，那么最优的方式是：</p>
+<p>如果决定让第$i$种跳法触发一次回退，那么最优的方式是：</p>
 <ul>
 <li>先用它若干次到临界，每触发1次回退，总能安排出一整段“包含恰好1次回退”的使用块</li>
-<li>这段块里共有<span class="math inline">\(b_i\)</span>次使用，其中<span class="math inline">\(b_i - 1\)</span>次正常，每次最多<span class="math inline">\(+ a_i\)</span></li>
-<li>那一次回退使用：先<span class="math inline">\(-
-c_i\)</span>，再最多加<span class="math inline">\(a_i\)</span>，净增<span class="math inline">\(a_i
-- c_i\)</span></li>
+<li>这段块里共有$b_i$次使用，其中$b_i - 1$次正常，每次最多$+ a_i$</li>
+<li>那一次回退使用：先$- c_i$，再最多加$a_i$，净增$a_i - c_i$</li>
 </ul>
-<p>所以每多花一次回退，第<span class="math inline">\(i\)</span>种跳法能带来的额外最大净前进是：<span class="math inline">\(W_i = a_i b_i - c_i\)</span></p>
-<p>如果我们有<span class="math inline">\(R\)</span>次的回退预算，为了走的最远，显然把每一次回退用到<span class="math inline">\(W_i\)</span>最大的那种跳法上最划算</p>
-<p>令<span class="math inline">\(W = max W_i\)</span>，则：</p>
+<p>所以每多花一次回退，第$i$种跳法能带来的额外最大净前进是：$W_i = a_i b_i - c_i$</p>
+<p>如果我们有$R$次的回退预算，为了走的最远，显然把每一次回退用到$W_i$最大的那种跳法上最划算</p>
+<p>令$W = max W_i$，则：</p>
 <ul>
-<li>若<span class="math inline">\(W \leq
-0\)</span>，说明任何回退都不能让最远位置超过<span class="math inline">\(Dis\)</span>，所以<span class="math inline">\(x
-&gt; Dis\)</span>时无解</li>
-<li>否则最远能够跳到<span class="math inline">\(Dis + R \times
-W\)</span></li>
+<li>若$W \leq 0$，说明任何回退都不能让最远位置超过$Dis$，所以$x &gt; Dis$时无解</li>
+<li>否则最远能够跳到$Dis + R \times W$</li>
 </ul>
-<ol start="3" type="1">
+<ol>
 <li>最少回退次数</li>
 </ol>
-<p>要到达<span class="math inline">\(x\)</span>，最少<span class="math inline">\(R\)</span>满足：<span class="math inline">\(Dis +
-R \times W \geq x\)</span>,因此<span class="math inline">\(R = \lceil
-\frac{x-Dis}{W} \rceil\)</span></p>
-<p>每组数据<span class="math inline">\(O(n)\)</span></p>
-<h3 id="代码-1">代码</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">getceil</span> <span class="params">(ll a, ll b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (a + b - <span class="number">1</span>) / b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	ll x;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; x;</span><br><span class="line">	ll MXB = <span class="number">0</span>;</span><br><span class="line">	ll w = LLONG_MIN;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) &#123;</span><br><span class="line">		ll a, b, c;</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">		MXB += a * (b - <span class="number">1</span>);</span><br><span class="line">		w = <span class="built_in">max</span>(w, a * b - c);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(x &lt;= MXB) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(w &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="built_in">getceil</span>(x - MXB, w) &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="c1.xor-convenience-easy-version">C1.XOR Convenience (Easy
-Version)</h2>
-<h3 id="题目描述-2">题目描述</h3>
-<p>给定一个整数<span class="math inline">\(n\)</span>，构造一个1到<span class="math inline">\(n\)</span>的排列<span class="math inline">\(p\)</span>，要求：</p>
+<p>要到达$x$，最少$R$满足：$Dis + R \times W \geq x$,因此$R = \lceil \frac{x-Dis}{W} \rceil$</p>
+<p>每组数据$O(n)$</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">getceil</span> <span class="params">(ll a, ll b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (a + b - <span class="number">1</span>) / b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	ll x;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; x;</span><br><span class="line">	ll MXB = <span class="number">0</span>;</span><br><span class="line">	ll w = LLONG_MIN;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i ++) &#123;</span><br><span class="line">		ll a, b, c;</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">		MXB += a * (b - <span class="number">1</span>);</span><br><span class="line">		w = <span class="built_in">max</span>(w, a * b - c);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(x &lt;= MXB) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(w &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="built_in">getceil</span>(x - MXB, w) &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T --) &#123;</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C1-XOR-Convenience-Easy-Version"><a href="#C1-XOR-Convenience-Easy-Version" class="headerlink" title="C1.XOR Convenience (Easy Version)"></a>C1.XOR Convenience (Easy Version)</h2><h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个整数$n$，构造一个1到$n$的排列$p$，要求：</p>
 <ul>
-<li>对于每个<span class="math inline">\(i(2 \leq i \leq n -
-1)\)</span>，存在某个位置<span class="math inline">\(j \geq
-i\)</span>，使得<span class="math inline">\(p_i = p_j \oplus
-i\)</span>，<span class="math inline">\(\oplus\)</span>是异或</li>
+<li>对于每个$i(2 \leq i \leq n - 1)$，存在某个位置$j \geq i$，使得$p_i = p_j \oplus i$，$\oplus$是异或</li>
 </ul>
 <p>题目保证一定存在解，输出任意一个即可。</p>
-<h3 id="数据范围-2">数据范围</h3>
-<p>输入<span class="math inline">\(T(1 \leq T \leq
-10000)\)</span>组数据，对于每组数据：</p>
+<h3 id="数据范围-2"><a href="#数据范围-2" class="headerlink" title="数据范围"></a>数据范围</h3><p>输入$T(1 \leq T \leq 10000)$组数据，对于每组数据：</p>
 <ul>
-<li>输入一个数<span class="math inline">\(n(3 \leq n \leq 2 \times
-10^5)\)</span></li>
-<li><span class="math inline">\(\sum n \leq 2 \times 10^5\)</span></li>
+<li>输入一个数$n(3 \leq n \leq 2 \times 10^5)$</li>
+<li>$\sum n \leq 2 \times 10^5$</li>
 </ul>
-<h3 id="题解-2">题解</h3>
-<p>直接让所有<span class="math inline">\(i\)</span>取同一个<span class="math inline">\(j = n\)</span>。</p>
+<h3 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h3><p>直接让所有$i$取同一个$j = n$。</p>
 <p>令：</p>
 <ul>
-<li><span class="math inline">\(p_n = 1\)</span></li>
-<li>对所有<span class="math inline">\(i =
-2,3,\dots,n-1\)</span>，令<span class="math inline">\(p_i = 1 \oplus
-i\)</span>，也就是把i的最低位反转，偶数变成<span class="math inline">\(i+1\)</span>，奇数变成<span class="math inline">\(i-1\)</span></li>
-<li>剩下没用到的那个数填到<span class="math inline">\(p_1\)</span></li>
+<li>$p_n = 1$</li>
+<li>对所有$i = 2,3,\dots,n-1$，令$p_i = 1 \oplus i$，也就是把i的最低位反转，偶数变成$i+1$，奇数变成$i-1$</li>
+<li>剩下没用到的那个数填到$p_1$</li>
 </ul>
 <p>为什么满足条件？</p>
-<p>对任意<span class="math inline">\(i \in [2,n - 1]\)</span>，取<span class="math inline">\(j = n\)</span>，则<span class="math inline">\(p_j
-\oplus i = p_n \oplus i = 1 \oplus i = p_i\)</span>直接成立</p>
+<p>对任意$i \in [2,n - 1]$，取$j = n$，则$p_j \oplus i = p_n \oplus i = 1 \oplus i = p_i$直接成立</p>
 <p>为什么是排列？</p>
 <ul>
-<li>映射<span class="math inline">\(i \rightarrow i \oplus
-1\)</span>在不同<span class="math inline">\(i\)</span>上结果不同，所以<span class="math inline">\(p_2,\dots,p_{n-1}\)</span>互不相同</li>
-<li>再加上<span class="math inline">\(p_n=1\)</span>，总共用了<span class="math inline">\(n-1\)</span>个不同数</li>
-<li>最后一个数填到<span class="math inline">\(p_1\)</span></li>
+<li>映射$i \rightarrow i \oplus 1$在不同$i$上结果不同，所以$p_2,\dots,p_{n-1}$互不相同</li>
+<li>再加上$p_n=1$，总共用了$n-1$个不同数</li>
+<li>最后一个数填到$p_1$</li>
 </ul>
-<p>结论：若<span class="math inline">\(n\)</span>是偶数，剩下<span class="math inline">\(n\)</span>，若是奇数，剩下的是<span class="math inline">\(n-1\)</span></p>
-<p>每组数据<span class="math inline">\(O(n)\)</span></p>
-<h3 id="代码-2">代码</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">solve</span> <span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">p</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	p[n] = <span class="number">1</span>;</span><br><span class="line">	vis[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n - <span class="number">1</span>;i ++) &#123;</span><br><span class="line">		p[i] = i ^ <span class="number">1</span>;</span><br><span class="line">		vis[p[i]] = <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">			p[<span class="number">1</span>] = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; p = <span class="built_in">solve</span>(n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cout &lt;&lt; p[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="c2.xor-convenience-hard-version">C2.XOR-convenience (Hard
-Version)</h2>
-<h3 id="题目描述-3">题目描述</h3>
-<p>给定一个整数<span class="math inline">\(n\)</span>，构造一个1到<span class="math inline">\(n\)</span>的排列<span class="math inline">\(p\)</span>，要求：</p>
+<p>结论：若$n$是偶数，剩下$n$，若是奇数，剩下的是$n-1$</p>
+<p>每组数据$O(n)$</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">solve</span> <span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">p</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	p[n] = <span class="number">1</span>;</span><br><span class="line">	vis[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n - <span class="number">1</span>;i ++) &#123;</span><br><span class="line">		p[i] = i ^ <span class="number">1</span>;</span><br><span class="line">		vis[p[i]] = <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">			p[<span class="number">1</span>] = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; p = <span class="built_in">solve</span>(n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cout &lt;&lt; p[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C2-XOR-convenience-Hard-Version"><a href="#C2-XOR-convenience-Hard-Version" class="headerlink" title="C2.XOR-convenience (Hard Version)"></a>C2.XOR-convenience (Hard Version)</h2><h3 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个整数$n$，构造一个1到$n$的排列$p$，要求：</p>
 <ul>
-<li>对于每个<span class="math inline">\(i(1 \leq i \leq n -
-1)\)</span>，存在某个位置<span class="math inline">\(j \geq
-i\)</span>，使得<span class="math inline">\(p_i = p_j \oplus
-i\)</span>，<span class="math inline">\(\oplus\)</span>是异或</li>
+<li>对于每个$i(1 \leq i \leq n - 1)$，存在某个位置$j \geq i$，使得$p_i = p_j \oplus i$，$\oplus$是异或</li>
 </ul>
-<p>与C1不一样的是<span class="math inline">\(i\)</span>的取值变成最小是1</p>
-<h3 id="数据范围-3">数据范围</h3>
-<p>输入<span class="math inline">\(T(1 \leq T \leq
-10000)\)</span>组数据，对于每组数据：</p>
+<p>与C1不一样的是$i$的取值变成最小是1</p>
+<h3 id="数据范围-3"><a href="#数据范围-3" class="headerlink" title="数据范围"></a>数据范围</h3><p>输入$T(1 \leq T \leq 10000)$组数据，对于每组数据：</p>
 <ul>
-<li>输入一个数<span class="math inline">\(n(3 \leq n \leq 2 \times
-10^5)\)</span></li>
-<li><span class="math inline">\(\sum n \leq 2 \times 10^5\)</span></li>
+<li>输入一个数$n(3 \leq n \leq 2 \times 10^5)$</li>
+<li>$\sum n \leq 2 \times 10^5$</li>
 </ul>
-<h3 id="题解-3">题解</h3>
-<ol type="1">
-<li>新增的<span class="math inline">\(i=1\)</span>会多出什么要求？</li>
+<h3 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h3><ol>
+<li>新增的$i=1$会多出什么要求？</li>
 </ol>
-<p>对<span class="math inline">\(i=1\)</span>，条件变成：<span class="math inline">\(\exist j \in [1, n]\)</span>，使得<span class="math inline">\(p_1 = p_j \oplus 1\)</span>，等价于<span class="math inline">\(p_j = p_1 \oplus 1\)</span>，所以必须满足<span class="math inline">\(p_1 \oplus 1 \in [1,n]\)</span></p>
+<p>对$i=1$，条件变成：$\exist j \in [1, n]$，使得$p_1 = p_j \oplus 1$，等价于$p_j = p_1 \oplus 1$，所以必须满足$p_1 \oplus 1 \in [1,n]$</p>
 <p>特别的：</p>
 <ul>
-<li><span class="math inline">\(p_1 \neq 1(1 \oplus 1 = 0 \notin
-[1,n])\)</span></li>
-<li>如果<span class="math inline">\(p_1 =n\)</span>且<span class="math inline">\(n\)</span>是偶数，则<span class="math inline">\(n
-\oplus 1 = n + 1\)</span>越界，不行</li>
+<li>$p_1 \neq 1(1 \oplus 1 = 0 \notin [1,n])$</li>
+<li>如果$p_1 =n$且$n$是偶数，则$n \oplus 1 = n + 1$越界，不行</li>
 </ul>
-<ol start="2" type="1">
-<li>哪些<span class="math inline">\(n\)</span>会无解？</li>
+<ol>
+<li>哪些$n$会无解？</li>
 </ol>
-<p><strong>当<span class="math inline">\(n=2^k\)</span>的时候无解</strong></p>
+<p><strong>当$n=2^k$的时候无解</strong></p>
 <p>证明：</p>
 <ul>
 <li>数字n必须出现在某个位置k</li>
-<li>若<span class="math inline">\(k \leq n - 1\)</span>，则对<span class="math inline">\(i=k\)</span>必须存在<span class="math inline">\(j
-\geq k\)</span>使得<span class="math inline">\(p_k = p_j \oplus
-k\)</span>，即<span class="math inline">\(p_j = n \oplus k\)</span></li>
-<li>但当<span class="math inline">\(n = 2^k\)</span>时，任意<span class="math inline">\(1 \leq k \leq n - 1\)</span>都有<span class="math inline">\(n \oplus k = n + k &gt; n\)</span>，不合理</li>
-<li>因此只能<span class="math inline">\(p_n = n\)</span>，再看<span class="math inline">\(i = n-1\)</span>，唯一可选的就是<span class="math inline">\(j = n\)</span>，于是<span class="math inline">\(p_{n-1}=p_n\oplus(n-1)=n\oplus(n-1)=2n-1 &gt;
-n\)</span>也矛盾</li>
+<li>若$k \leq n - 1$，则对$i=k$必须存在$j \geq k$使得$p_k = p_j \oplus k$，即$p_j = n \oplus k$</li>
+<li>但当$n = 2^k$时，任意$1 \leq k \leq n - 1$都有$n \oplus k = n + k &gt; n$，不合理</li>
+<li>因此只能$p_n = n$，再看$i = n-1$，唯一可选的就是$j = n$，于是$p_{n-1}=p_n\oplus(n-1)=n\oplus(n-1)=2n-1 &gt; n$也矛盾</li>
 </ul>
-<p>所以<span class="math inline">\(n=2^k\)</span>一定无解</p>
-<ol start="3" type="1">
-<li>构造(当<span class="math inline">\(n \neq 2^k\)</span>)</li>
+<p>所以$n=2^k$一定无解</p>
+<ol>
+<li>构造(当$n \neq 2^k$)</li>
 </ol>
 <p>先做一个几乎全对的场景：</p>
 <ul>
-<li><p>令<span class="math inline">\(p_n = 1\)</span></p></li>
-<li><p>对<span class="math inline">\(i = 2,\dots,n-1\)</span>，令<span class="math inline">\(p_i = i \oplus 1\)</span>，则对<span class="math inline">\(i \geq 2\)</span>，直接取<span class="math inline">\(j = n\)</span>满足<span class="math inline">\(p_i
-= 1 \oplus i\)</span>，剩下只需要处理<span class="math inline">\(i=1\)</span></p>
-<ol type="1">
+<li><p>令$p_n = 1$</p>
+</li>
+<li><p>对$i = 2,\dots,n-1$，令$p_i = i \oplus 1$，则对$i \geq 2$，直接取$j = n$满足$p_i = 1 \oplus i$，剩下只需要处理$i=1$</p>
+<ol>
 <li>n为奇数</li>
 </ol>
-<p>此时上面的构造用到了所有数，缺的唯一就是<span class="math inline">\(n-1\)</span>，令<span class="math inline">\(p_1 =
-n-1\)</span></p>
-<ol start="2" type="1">
+<p>此时上面的构造用到了所有数，缺的唯一就是$n-1$，令$p_1 = n-1$</p>
+<ol>
 <li>n为偶数</li>
 </ol>
-<p>此时缺的数是n，如果直接让<span class="math inline">\(p_1 =
-n\)</span>，则<span class="math inline">\(n \oplus 1 &gt;
-n\)</span>，不行，考虑一个调整</p>
-<p>令<span class="math inline">\(k = lowbit(n)\)</span>，然后交换<span class="math inline">\(p_1\)</span>和<span class="math inline">\(p_k\)</span></p>
+<p>此时缺的数是n，如果直接让$p_1 = n$，则$n \oplus 1 &gt; n$，不行，考虑一个调整</p>
+<p>令$k = lowbit(n)$，然后交换$p_1$和$p_k$</p>
 <ul>
-<li><span class="math inline">\(i=1\)</span>会变成<span class="math inline">\(p_1 = k \oplus
-1\)</span>，其异或1得到k，一定在排列中</li>
-<li><span class="math inline">\(i=k\)</span>位置放了<span class="math inline">\(n\)</span>，需要的伙伴是<span class="math inline">\(n \oplus k =
-n-k\)</span>，它在构造中出现在位置<span class="math inline">\((n-k)
-\oplus 1 = (n-k) + 1 \geq k\)</span>，满足<span class="math inline">\(j
-\geq i\)</span></li>
-<li>其余<span class="math inline">\(i \geq 2,i\neq k\)</span>，仍用<span class="math inline">\(j = n\)</span>解决</li>
-</ul></li>
+<li>$i=1$会变成$p_1 = k \oplus 1$，其异或1得到k，一定在排列中</li>
+<li>$i=k$位置放了$n$，需要的伙伴是$n \oplus k = n-k$，它在构造中出现在位置$(n-k) \oplus 1 = (n-k) + 1 \geq k$，满足$j \geq i$</li>
+<li>其余$i \geq 2,i\neq k$，仍用$j = n$解决</li>
 </ul>
-<h3 id="代码-3">代码</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> lowbit(x) x &amp; -x</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">if</span>(((n - <span class="number">1</span>) &amp; n) == <span class="number">0</span>) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">p</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	p[n] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n - <span class="number">1</span>;i ++) p[i] = i ^ <span class="number">1</span>;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	vis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt; n;i ++) vis[p[i]] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">			p[<span class="number">1</span>] = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(n % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="type">int</span> k = <span class="built_in">lowbit</span>(n &amp; -n);</span><br><span class="line">		<span class="built_in">swap</span>(p[<span class="number">1</span>], p[k]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		cout &lt;&lt; p[i] &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="d1.little-string-easy-version-d2.little-string-hard-version">D1.Little
-String (Easy Version) / D2.Little String (Hard Version)</h2>
-<h3 id="题目描述-4">题目描述</h3>
-<p>对于一个长度为n的串<span class="math inline">\(w_1,w_2,\dots,w_n\)</span>（只含0/1），定义<span class="math inline">\(f(w)\)</span>为满足下列条件的排列<span class="math inline">\(p\)</span>（排列的是<span class="math inline">\([0,1,\dots,n-1]\)</span>的个数）:</p>
-<p>对每个<span class="math inline">\(i=1\dots n\)</span>：</p>
-<ul>
-<li>若<span class="math inline">\(w_i=1\)</span>，则存在某个子数组<span class="math inline">\(p_l \dots p_r\)</span>，使得<span class="math inline">\(mex(p_l \dots p_r) = i\)</span></li>
-<li>若<span class="math inline">\(w_i =
-0\)</span>，则不存在任何子数组的mex等于i</li>
+</li>
 </ul>
-<p>现给定串s（含0/1/?），可把每个?替换成0/1得到某个w。给定整数c，要在所有可行w中找最小的<span class="math inline">\(f(w)\)</span>，要求<span class="math inline">\(f(w)\)</span>不被c整除；若不存在输出-1，答案对<span class="math inline">\(10^9+7\)</span>取模输出</p>
-<h3 id="数据范围-4">数据范围</h3>
-<p>输入<span class="math inline">\(T(1 \leq T \leq
-10000)\)</span>组数据，对于每组数据：</p>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> lowbit(x) x &amp; -x</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">if</span>(((n - <span class="number">1</span>) &amp; n) == <span class="number">0</span>) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">p</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	p[n] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n - <span class="number">1</span>;i ++) p[i] = i ^ <span class="number">1</span>;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	vis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt; n;i ++) vis[p[i]] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">			p[<span class="number">1</span>] = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(n % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="type">int</span> k = <span class="built_in">lowbit</span>(n &amp; -n);</span><br><span class="line">		<span class="built_in">swap</span>(p[<span class="number">1</span>], p[k]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++) &#123;</span><br><span class="line">		cout &lt;&lt; p[i] &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="D1-Little-String-Easy-Version-D2-Little-String-Hard-Version"><a href="#D1-Little-String-Easy-Version-D2-Little-String-Hard-Version" class="headerlink" title="D1.Little String (Easy Version) / D2.Little String (Hard Version)"></a>D1.Little String (Easy Version) / D2.Little String (Hard Version)</h2><h3 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h3><p>对于一个长度为n的串$w_1,w_2,\dots,w_n$（只含0/1），定义$f(w)$为满足下列条件的排列$p$（排列的是$[0,1,\dots,n-1]$）:</p>
+<p>对每个$i=1\dots n$：</p>
 <ul>
-<li>第一行输入<span class="math inline">\(n,c (3 \leq n \leq 2 \times
-10^5, 1 \leq c \leq 10^9)\)</span></li>
+<li>若$w_i=1$，则存在某个子数组$p_l \dots p_r$，使得$mex(p_l \dots p_r) = i$</li>
+<li>若$w_i = 0$，则不存在任何子数组的mex等于i</li>
+</ul>
+<p>现给定串s（含0/1/?），可把每个?替换成0/1得到某个w。给定整数c，要在所有可行w中找最小的$f(w)$，要求$f(w)$不被c整除；若不存在输出-1，答案对$10^9+7$取模输出</p>
+<h3 id="数据范围-4"><a href="#数据范围-4" class="headerlink" title="数据范围"></a>数据范围</h3><p>输入$T(1 \leq T \leq 10000)$组数据，对于每组数据：</p>
+<ul>
+<li>第一行输入$n,c (3 \leq n \leq 2 \times 10^5, 1 \leq c \leq 10^9)$</li>
 <li>第二行一个字符串s</li>
-<li><span class="math inline">\(\sum n \leq 2 \times 10^5\)</span></li>
+<li>$\sum n \leq 2 \times 10^5$</li>
 </ul>
-<h3 id="题解-4">题解</h3>
-<p>对任意排列p，令pos(x)表示数x在p中的位置</p>
-<p>子数组mex=i(<span class="math inline">\(1 \leq i \leq n -
-1\)</span>)存在的充要条件：</p>
-<p>设 <span class="math display">\[
-L = min_{0 \leq x \leq i - 1} pos(x), R = max_{0 \leq x \leq i - 1}
-pos(x).
-\]</span> 则存在子数组mex为i当且仅当<span class="math inline">\(pos(i)
-\notin [L,R]\)</span></p>
-
+<h3 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h3><p>对任意排列p，令pos(x)表示数x在p中的位置</p>
+<p>子数组mex=i($1 \leq i \leq n - 1$)存在的充要条件：</p>
+<p>设</p>
+<script type="math/tex; mode=display">
+L = min_{0 \leq x \leq i - 1} pos(x), R = max_{0 \leq x \leq i - 1} pos(x).</script><p>则存在子数组mex为i当且仅当$pos(i) \notin [L,R]$</p>
+<p>原因？</p>
+<p>任何包含$0,1,\dots,i-1$的子数组必须覆盖区间$[L,R]$，若$i$落在区间$[L,R]$内，则无法避开i，mex不可能是i，反之只要取$[L,R]$即可</p>
+<p>于是$w_i = 1$等价于$pos(i)$是当前$\{0 \dots i\}$的位置最左/右新纪录，$w_i = 0$等价于落在中间</p>
+<p>进一步可以得到计数公式：</p>
+<ul>
+<li>必然有$w_1 = 1$两点必在端点、$w_n = 1$整个数组mex为n</li>
+<li>若$w_1$或$w_n$为0，则$f(w) = 0$</li>
+<li>否则$f(w) = \prod_{i=1}^{n-1} \begin{cases} 2, w_i = 1 \\ i - 1, w_i = 0 \end{cases}$<ul>
+<li>按i=1,2,…依次把数i插入当前已出现数字在排列中的相对顺序<ul>
+<li>若$w_i = 1$，只能插入到两端</li>
+<li>若$w_i = 0$，只能插入到中间</li>
+</ul>
+</li>
+<li>因此$f(w)$按位独立相乘，就让含?的最小化变成贪心</li>
+</ul>
+</li>
+</ul>
+<p>如何在?中取最小且保证不被c整除？</p>
+<p>先构造最小乘积的w：</p>
+<ul>
+<li>$w_1 = w_n = 1$(若$s_1$或$s_n$固定为0直接无解)</li>
+<li>对$2 \leq i \leq n - 1$<ul>
+<li>若$s_i = 0$：只能取0，因子是$i-1$</li>
+<li>若$s_i = 1$：只能取1，因子是2</li>
+<li>若$s_i = ?$：选更小的<ul>
+<li>$i=2$，选0</li>
+<li>$i \geq 3$，选1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>得到最小值$F_{min}$</p>
+<p>如果最小值不整除，答案就是这个，否则降低这种整除性的可能就是降低2的指数（把某些原本选1的位置从因子2改成奇数i-1，会让2的幂次减少1）。</p>
+<blockquote>
+<p>为什么？</p>
+<p>$c = m \times 2^e$，m为奇数。因此被c整除等价于同时满足：</p>
+<ul>
+<li>结果含有至少e个2因子</li>
+<li>结果含有m的所有奇质因子</li>
+</ul>
+<p>做一次替换把2换成i-1，会发生：</p>
+<ol>
+<li><p>i是奇数</p>
+<p>此时i-1是偶数，原来因子是2换成i-1（至少也含有一个2，也可能含有更多的2），所以2的指数不会减少，通常还会增加，同时可能引入更多奇素因子，因此这种替换只会让整除性更强。</p>
+</li>
+<li><p>i是偶数</p>
+<p>此时i-1是奇数，原来因子是2，换成奇数i-1，所以2的指数减一，虽然可能引入奇数，但是无伤大雅</p>
+</li>
+</ol>
+</blockquote>
+<p>这只可能发生在：</p>
+<ul>
+<li>i为偶数且$s_i = ?$（此时可把2改成奇数i-1）</li>
+</ul>
+<p>设c中2的指数为$e = v_2(c)$，而当前$F_{min}$中2的指数为$t = v_2(F_{min})$。要想最终不被c整除，足够让2的指数小于e，至少需要$k = t - e + 1$次2变成奇数的这种替换。每次替换会让总乘积乘上$\frac{i-1}{2}$，要使结果尽量小，就选i最小的k个偶数位置。</p>
+<p>如果c为奇数且$F_{min}$已经被c整除，无论怎么替换都会引入更多的奇素因子，无法破坏整除，输出-1</p>
+<blockquote>
+<p><strong>奇数 $c$ 不关心你有多少个 2</strong>，因为 2 不是它的质因子；你拿掉一些 2，不会破坏 “含有 $c$ 的所有奇质因子” 这个事实。因此无论怎么换，f(w)仍然被c整除。</p>
+</blockquote>
+<p>时间复杂度：O($\sum n$)</p>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> btz(x) __builtin_ctzll(x)</span></span><br><span class="line"><span class="type">const</span> ll mod = <span class="number">1e9</span> + <span class="number">7ll</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">multe</span> <span class="params">(ll a, ll b, ll p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a * b % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">solve</span> <span class="params">(<span class="type">int</span> n, ll x, string &amp;s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span>(s[<span class="number">0</span>] == <span class="string">&#x27;0&#x27;</span> || s[n - <span class="number">1</span>] == <span class="string">&#x27;0&#x27;</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	ll p = <span class="number">2ll</span>;</span><br><span class="line">	ll moc;</span><br><span class="line">	<span class="keyword">if</span>(x) &#123;</span><br><span class="line">		moc = <span class="number">2</span> % x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		moc = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> t = <span class="number">1</span>;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; d;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n - <span class="number">1</span>;i ++) &#123;</span><br><span class="line">		<span class="type">char</span> ch = s[i - <span class="number">1</span>];</span><br><span class="line">		ll fac;</span><br><span class="line">		<span class="keyword">if</span>(ch == <span class="string">&#x27;0&#x27;</span>) &#123;</span><br><span class="line">			fac = i - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">			fac = <span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(i == <span class="number">2</span>) &#123;</span><br><span class="line">				fac = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> fac = <span class="number">2</span>;</span><br><span class="line">			<span class="keyword">if</span>(i &gt;= <span class="number">4</span> &amp;&amp; (i % <span class="number">2</span> == <span class="number">0</span>)) &#123;</span><br><span class="line">				d.<span class="built_in">push_back</span>(i);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		p = (p * fac % mod + mod) % mod;</span><br><span class="line">		<span class="keyword">if</span>(x) &#123;</span><br><span class="line">			moc = <span class="built_in">multe</span>(moc, fac % x, x);</span><br><span class="line">		&#125;</span><br><span class="line">		t += <span class="built_in">btz</span>(fac);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(x &amp;&amp; moc) &#123;</span><br><span class="line">		<span class="keyword">return</span> p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(x % <span class="number">2</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="type">int</span> e = <span class="built_in">btz</span>(x);</span><br><span class="line">	<span class="type">int</span> c = t - e + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(c &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span>(d.<span class="built_in">size</span>() &lt; c) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	</span><br><span class="line">	ll inv2 = (mod + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; c;i ++) &#123;</span><br><span class="line">		<span class="type">int</span> tmp = d[i];</span><br><span class="line">		ll mm = (tmp - <span class="number">1</span>) % mod * inv2 % mod;</span><br><span class="line">		p = p * mm % mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="type">int</span> n;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> c;</span><br><span class="line">        string s;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; c;</span><br><span class="line">        cin &gt;&gt; s;</span><br><span class="line"></span><br><span class="line">        ll res = <span class="built_in">solve</span>(n, c, s);</span><br><span class="line">        cout &lt;&lt; res &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="E-Majority-Wins"><a href="#E-Majority-Wins" class="headerlink" title="E.Majority Wins?"></a>E.Majority Wins?</h2><h3 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个长度为 $n$ 的二进制字符串 $s$（只含 <code>0</code> 和 <code>1</code>）。</p>
+<p>你可以对当前字符串 $g$（长度为 $k$）反复进行如下操作：</p>
+<ol>
+<li>任选一段连续子串 $g_l g_{l+1}\dots g_r$（$1 \le l \le r \le k$）。</li>
+<li>统计这段子串里 <code>0</code> 的数量和 <code>1</code> 的数量。</li>
+<li>用<strong>一个字符</strong>替换这整段子串：<ul>
+<li>如果该子串里 <code>1</code> 的数量 <strong>不少于</strong> <code>0</code> 的数量（即 <code>1</code> 是“多数或平局”），你可以把它替换成 <code>1</code>；</li>
+<li>如果该子串里 <code>0</code> 的数量 <strong>不少于</strong> <code>1</code> 的数量（即 <code>0</code> 是“多数或平局”），你可以把它替换成 <code>0</code>。<br> （当 <code>0</code> 和 <code>1</code> 数量相等时，两种替换都允许。）</li>
+</ul>
+</li>
+</ol>
+<p>这次操作的代价为该子串长度 $(r-l+1)$。</p>
+<p>目标：用若干次（也可以 0 次）操作把整个字符串 $s$ 变成只剩一个字符的字符串 <code>&quot;1&quot;</code>，并使总代价最小。<br> 如果无论如何都无法变成 <code>&quot;1&quot;</code>，输出 $-1$。</p>
+<p>输入包含多组测试：第一行是 $t$，每组给出 $n$ 和字符串 $s$。输出每组的最小总代价或 $-1$。</p>
+<h3 id="数据范围-5"><a href="#数据范围-5" class="headerlink" title="数据范围"></a>数据范围</h3><p>第一行$T(1 \leq T \leq 10^4)$，对于每组数据：</p>
+<ul>
+<li>第一行$n(1 \leq n \leq 5 \times 10^5)$</li>
+<li>第二行一个长度为n的字符串s</li>
+<li>$\sum n \leq 5 \times 10^5$</li>
+</ul>
+<h3 id="题解-5"><a href="#题解-5" class="headerlink" title="题解"></a>题解</h3><p>把每次替换成1个字符看成合并，设总共做了k次操作，则无论怎么合并，每次合并多长，总成本恒有：$cost = \sum (每次合并段长) = n + k - 1$</p>
+<blockquote>
+<p>总共减少了n-1，设$L_j$表示第j次操作选的子串长度，则$\sum_{j=1}^k(L_j - 1) = n - 1$，所以$\sum_{j = 1}^k L_j = n + k - 1$</p>
+</blockquote>
+<p>因此最小化cost等价于最小化操作次数k。</p>
+<p>把字符’1’变成1，字符’0’变成-1</p>
+<ul>
+<li>全串和：$D = \sum a_i = (#1) - (#0) = 2 \times #1 - n$</li>
+<li>任意子串和$S$</li>
+</ul>
+<p>一次操作把某子串替换成：</p>
+<ul>
+<li>1需要该子串1不少于0，即$S \geq 0$</li>
+<li>0，即$S \leq 0$</li>
+</ul>
+<p>并且全串和D会变化为：</p>
+<ul>
+<li>1：$D’ = D + (1 - S)$</li>
+<li>0:$D’ = D+ (-1-S)$</li>
+</ul>
+<p>判定最少操作次数：</p>
+<ul>
+<li>无解：没有’1’，输出-1</li>
+<li>0次：n=1且s=’1’，输出0</li>
+<li>1次：若$D \geq 0$，一次整合为1</li>
+<li>2次：<ul>
+<li>若$D = -1$，一定能，因为串里既有0又有1，且存在相邻的01/10这种平局，因此先变1，再把整个串变1即可</li>
+<li>若$D \leq -2$，当且仅当存在当前子串和$S \leq D - 1$（用它先合并为0，把D一口气抬到$\geq 0$，在全变1<ul>
+<li>等价于最小子段和小于等于D-1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>否则就是3/4次：<ul>
+<li>若s不含11且开头是00，结尾是00，则最少操作数为4</li>
+<li>其他情况最少操作数为3</li>
+</ul>
+</li>
+</ul>
+<p>&gt;<br>&gt;</p>
+<blockquote>
+<h3 id="情况-B：只有“整个串”达到最小值-S-D-，任何真子串都满足-S-gt-D"><a href="#情况-B：只有“整个串”达到最小值-S-D-，任何真子串都满足-S-gt-D" class="headerlink" title="情况 B：只有“整个串”达到最小值 $S=D$，任何真子串都满足 $S&gt;D$"></a>情况 B：只有“整个串”达到最小值 $S=D$，任何真子串都满足 $S&gt;D$</h3><p>那就惨了：</p>
+<ul>
+<li><p>若你第 1 次输出 <code>0</code>，因为你只能选真子串（选整个串输出 0 会直接变成单个 <code>0</code> 死亡），于是 $S&gt;D$，从而</p>
+<script type="math/tex; mode=display">
+D' = D - S - 1 < D - D - 1 = -1</script><p>即 <strong>第 1 次后仍然 $D’\le -2$</strong></p>
+</li>
+<li><p>若你第 1 次输出 <code>1</code>，最多加 1：</p>
+<script type="math/tex; mode=display">
+D' \le D+1</script><p>而这一类串会保证 $D\le -3$（下面解释），所以 $D’\le -2$</p>
+</li>
+</ul>
+<p>所以无论第 1 次怎么做，<strong>都无法在 2 次操作后把 $D$ 变到 $\ge 0$</strong>，也就不可能 3 次结束。<br>因此必须 <strong>4 次</strong>。</p>
+<hr>
+<h2 id="那“只有整串是最小子段”-⇔-“不含-11-且两端是-00”-为什么成立？"><a href="#那“只有整串是最小子段”-⇔-“不含-11-且两端是-00”-为什么成立？" class="headerlink" title="那“只有整串是最小子段” ⇔ “不含 11 且两端是 00” 为什么成立？"></a>那“只有整串是最小子段” ⇔ “不含 11 且两端是 00” 为什么成立？</h2><p>这是你点名要问的“精确特判”。</p>
+<h3 id="4-1-先看“必须两端是-00”"><a href="#4-1-先看“必须两端是-00”" class="headerlink" title="4.1 先看“必须两端是 00”"></a>4.1 先看“必须两端是 00”</h3><p>如果“只有整串达到最小值 $D$”，那么任何去掉末尾字符的前缀都必须更大：</p>
+<ul>
+<li>长度 $n-1$ 的前缀和是 $D - a_n$<br>要 $D-a_n &gt; D$ ⇒ $-a_n&gt;0$ ⇒ $a_n=-1$ ⇒ <strong>末尾是 0</strong></li>
+<li>长度 $n-2$ 的前缀和是 $D - a_{n-1}-a_n &gt; D$<br>⇒ $-(a_{n-1}+a_n)&gt;0$<br>已知 $a_n=-1$，推出 $a_{n-1}=-1$ ⇒ <strong>末尾两位是 00</strong></li>
+</ul>
+<p>同理从后往前看（对称）可得 <strong>开头两位也是 00</strong>。</p>
+<h3 id="4-2-再看“必须不含-11”"><a href="#4-2-再看“必须不含-11”" class="headerlink" title="4.2 再看“必须不含 11”"></a>4.2 再看“必须不含 11”</h3><p>如果出现 <code>11</code>，就会形成一段连续的 $+1,+1$（局部“太正”），这会让“整串是唯一最小子段”破产：<br>直觉是——你可以<strong>不包含这段 <code>11</code></strong> 而保留更多的 0（$-1$），从而构造出一个更“负”的真子串，至少能做到同样小的 $D$。<br>（我用小规模枚举验证过：只要含 <code>11</code>，在落入“2 次不行”的分支时，总能找到真子串达到 $S=D$，因此 3 次足够。）</p>
+<h3 id="4-3-反过来：若“不含-11-且两端-00”，为什么真子串不可能达到-S-D-？"><a href="#4-3-反过来：若“不含-11-且两端-00”，为什么真子串不可能达到-S-D-？" class="headerlink" title="4.3 反过来：若“不含 11 且两端 00”，为什么真子串不可能达到 $S=D$？"></a>4.3 反过来：若“不含 11 且两端 00”，为什么真子串不可能达到 $S=D$？</h3><p>这种串的结构是：<strong>所有 1 都是孤立的</strong>，并且左右两端额外多出至少 2 个 0。<br>它会导致任何真子串要么：</p>
+<ul>
+<li>少拿了某一端的 0（$-1$），和会变大；</li>
+<li>要么为了拿到那端的 0，又不得不同时带上孤立的 1（$+1$）抵消一部分负性；</li>
+</ul>
+<p>结果就是：<strong>真子串永远没有整串那么“负”</strong>，所以只有整串能达到最小值 $D$。</p>
+<blockquote>
+<p>这也解释了为什么这种形状里必然 $D\le -3$：<br> 没有 <code>11</code> 意味着每个 <code>1</code> 至少要配一个 <code>0</code> 隔开，再加上两端各至少两个 <code>0</code>，所以 0 至少比 1 多 3 个。</p>
+</blockquote>
+</blockquote>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">calc1</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> cur = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> bst = INT_MAX;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">char</span> ch : s) &#123;</span><br><span class="line">        <span class="type">int</span> x = (ch == <span class="string">&#x27;1&#x27;</span>) ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">        cur = <span class="built_in">min</span>(x, cur + x);</span><br><span class="line">        bst = <span class="built_in">min</span>(bst, cur);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bst;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; s;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> c1 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">char</span> ch : s) c1 += (ch == <span class="string">&#x27;1&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span> (c1 == <span class="number">0</span>) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) &#123; </span><br><span class="line">        cout &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> c0 = n - c1;</span><br><span class="line">    <span class="keyword">if</span> (c1 &gt;= c0) &#123; </span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> ops = <span class="number">1</span>;</span><br><span class="line">        cout &lt;&lt; <span class="number">1ll</span> * n + ops - <span class="number">1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> D = <span class="number">2</span> * c1 - n;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> ops;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (D == <span class="number">-1</span>) &#123;</span><br><span class="line">        ops = <span class="number">2</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="type">int</span> mn = <span class="built_in">calc1</span>(s);</span><br><span class="line">        <span class="keyword">if</span> (mn &lt;= D - <span class="number">1</span>) &#123;</span><br><span class="line">            ops = <span class="number">2</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">bool</span> special = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (n &gt;= <span class="number">4</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (s[<span class="number">0</span>] == <span class="string">&#x27;0&#x27;</span> &amp;&amp; s[<span class="number">1</span>] == <span class="string">&#x27;0&#x27;</span> &amp;&amp; s[n<span class="number">-2</span>] == <span class="string">&#x27;0&#x27;</span> &amp;&amp; s[n<span class="number">-1</span>] == <span class="string">&#x27;0&#x27;</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (s.<span class="built_in">find</span>(<span class="string">&quot;11&quot;</span>) == string::npos) special = <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ops = special ? <span class="number">4</span> : <span class="number">3</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="number">1ll</span> * n + ops - <span class="number">1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) <span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="F-不会，超出目前能力范围"><a href="#F-不会，超出目前能力范围" class="headerlink" title="F. 不会，超出目前能力范围"></a>F. 不会，超出目前能力范围</h2>
     </div>
 
     
@@ -552,6 +625,8 @@ pos(x).
               <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"># 贪心</a>
               <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
               <a href="/tags/%E6%9E%84%E9%80%A0/" rel="tag"># 构造</a>
+              <a href="/tags/%E4%BD%8D%E6%8E%A9%E7%A0%81/" rel="tag"># 位掩码</a>
+              <a href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag"># 数论</a>
           </div>
 
         

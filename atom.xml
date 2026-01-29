@@ -6,7 +6,7 @@
   <link href="http://allorkiya.github.io/atom.xml" rel="self"/>
   
   <link href="http://allorkiya.github.io/"/>
-  <updated>2026-01-28T15:21:06.535Z</updated>
+  <updated>2026-01-29T03:40:13.656Z</updated>
   <id>http://allorkiya.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>codeforces_1075_Div2</title>
+    <title>Codeforces 1075(Div2)</title>
     <link href="http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html"/>
     <id>http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html</id>
     <published>2026-01-23T14:01:01.000Z</published>
-    <updated>2026-01-28T15:21:06.535Z</updated>
+    <updated>2026-01-29T03:40:13.656Z</updated>
     
     
     <summary type="html">&lt;p&gt;题面写的有点构思…&lt;/p&gt;</summary>
@@ -41,6 +41,10 @@
     
     <category term="构造" scheme="http://allorkiya.github.io/tags/%E6%9E%84%E9%80%A0/"/>
     
+    <category term="位掩码" scheme="http://allorkiya.github.io/tags/%E4%BD%8D%E6%8E%A9%E7%A0%81/"/>
+    
+    <category term="数论" scheme="http://allorkiya.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
+    
   </entry>
   
   <entry>
@@ -54,7 +58,7 @@
       
       
     <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;</summary>
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2</summary>
       
     
     
@@ -72,8 +76,8 @@
   
   <entry>
     <title>1074</title>
-    <link href="http://allorkiya.github.io/2026-01-20-Codeforces_Round_1074(div4).html"/>
-    <id>http://allorkiya.github.io/2026-01-20-Codeforces_Round_1074(div4).html</id>
+    <link href="http://allorkiya.github.io/2026-01-20-Codeforces_Round_1074_div4.html"/>
+    <id>http://allorkiya.github.io/2026-01-20-Codeforces_Round_1074_div4.html</id>
     <published>2026-01-20T07:35:58.000Z</published>
     <updated>2026-01-28T14:02:25.452Z</updated>
     
