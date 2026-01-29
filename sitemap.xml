@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://allorkiya.github.io/2026-01-10-AtCoder_Beginner_Contest%20440.html</loc>
+    <loc>http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html</loc>
     
     <lastmod>2026-01-29</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://allorkiya.github.io/2026-01-23-codeforces-1075-Div2.html</loc>
+    <loc>http://allorkiya.github.io/2026-01-10-AtCoder_Beginner_Contest%20440.html</loc>
     
     <lastmod>2026-01-29</lastmod>
     
@@ -217,14 +217,7 @@
   </url>
   
   <url>
-    <loc>http://allorkiya.github.io/categories/%E6%AF%94%E8%B5%9B/%E7%AE%97%E6%B3%95%E9%A2%98/</loc>
-    <lastmod>2026-01-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://allorkiya.github.io/categories/%E6%AF%94%E8%B5%9B/%E7%AE%97%E6%B3%95%E9%A2%98/Codeforces/</loc>
+    <loc>http://allorkiya.github.io/categories/%E6%AF%94%E8%B5%9B/Codeforces/</loc>
     <lastmod>2026-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
